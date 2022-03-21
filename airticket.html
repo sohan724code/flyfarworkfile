@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fly Far International</title>
+
+  <!-- bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- font-awasome kit -->
+  <script src="https://kit.fontawesome.com/242c2244da.js" crossorigin="anonymous"></script>
+
+  <!-- Slick CSS CDN  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  
+</head>
+<body>
+  <div class="page-container mb-5">
+    <!-- Side Navbar -->
+    <nav class="side-nav  d-lg-block" id="side-navbar" class="w-50 ms-4 mt-4">
+      <img src="images/logo.gif" alt="Fly Far Int Logo" width="230px" style=" margin-top: -20px;">
+
+      <div class="ms-4 " style="width: 80%;">
+        <a href="./index.php">
+          <div class="sidenav-link">
+            Dashboard
+          </div>
+        </a>
+
+        <div class="sidenav-link navlink-with-icon" id="inquery-btn">
+          <span>Inquiry Management</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow" id="inquery-arrow" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-inquery-links">
+
+          <a href="./inquiry-management/air-ticket-search.php">
+            <div class="inner-nav-link">
+              Air Ticket Search
+            </div>
+          </a>
+
+          <a href="visaInformation.php">
+            <div class="inner-nav-link">
+              Visa Information
+            </div>
+          </a>
+
+          <a href="./inquiry-management/passport-search.php">
+            <div class="inner-nav-link">
+              Passport Search
+            </div>
+          </a>
+
+          <a href="FFL.php">
+            <div class="inner-nav-link">
+              FFL Package
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="inner-nav-link">
+              Trips Package
+            </div>
+          </a>
+
+          <a href="#">
+            <div class="inner-nav-link">
+              Travel Rules
+            </div>
+          </a>
+        </div>
+        <a href="#">
+          <div class="sidenav-link">
+            Task Management
+          </div>
+        </a>
+
+        <a href="#">
+          <div class="sidenav-link">
+            Requirements
+          </div>
+        </a>
+        <div class="sidenav-link navlink-with-icon" id="quation-btn">
+          <span>Quation</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow" id="quation-arrow" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-quation-links">
+          <a href="packageQuation.php">
+            <div class="inner-nav-link">
+              Package Quation
+            </div>
+          </a>
+          <a href="">
+            <div class="inner-nav-link">
+              Air Ticket Quation
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Visa Quation
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Hotel Quation
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Travel Assitancy Quation
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Insurance Quation
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              General Quation
+            </div>
+          </a>
+        </div>
+        <div class="sidenav-link navlink-with-icon" id="invoice-btn">
+          <span>Invoice</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow arrow-rotate" viewBox="0 0 20 20" fill="currentColor" id="invoice-arrow">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-invoice-links">
+          <a href="visaInvoice.php" target="_blank">
+            <div class="inner-nav-link">
+              Visa Invoice
+            </div>
+          </a>
+          <a href="visaInvoicePDF.php">
+            <div class="inner-nav-link">
+              Visa Invoice PDF
+            </div>
+          </a>
+
+        </div>
+
+        <a href="#">
+          <div class="sidenav-link">
+            Money Receipt
+          </div>
+        </a>
+        <div class="sidenav-link navlink-with-icon" id="expense-btn">
+          <span>Expense</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow arrow-rotate" viewBox="0 0 20 20" fill="currentColor" id="expense-arrow">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-expense-links">
+          <a href="OfficeExpense.php">
+            <div class="inner-nav-link">
+              Vendor Payment
+            </div>
+          </a>
+          <a href="OfficeExpense.php">
+            <div class="inner-nav-link">
+              Office Expenses
+            </div>
+          </a>
+          <a href="OfficeExpense.php">
+            <div class="inner-nav-link">
+              Other Expenses
+            </div>
+          </a>
+        </div>
+        <div class="sidenav-link navlink-with-icon" id="Setup-btn">
+          <span>Setup</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow arrow-rotate" viewBox="0 0 20 20" fill="currentColor" id="Setup-arrow">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-Setup-links">
+          <a href="">
+            <div class="inner-nav-link">
+              Account Setup
+            </div>
+          </a>
+          <a href="">
+            <div class="inner-nav-link">
+              Admin Setup
+            </div>
+          </a>
+          <a href="setup/visa-query-setup.php">
+            <div class="inner-nav-link">
+              Visa Query Setup
+            </div>
+          </a>
+        </div>
+        <a href="#">
+          <div class="sidenav-link">
+            Chart of Account
+          </div>
+        </a>
+        <div class="sidenav-link navlink-with-icon" id="report-btn">
+          <span>Report</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow" viewBox="0 0 20 20" fill="currentColor" id="report-arrow">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-report-links">
+          <a href="prepaidUnearnedReciveable.php">
+            <div class="inner-nav-link">
+              Account Report
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Admin Report
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Management Report
+            </div>
+          </a>
+        </div>
+        <a href="#">
+          <div class="sidenav-link">
+            Reconcile
+          </div>
+        </a>
+        <div class="sidenav-link navlink-with-icon" id="log-btn">
+          <span>Log</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow" viewBox="0 0 20 20" fill="currentColor" id="log-arrow">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="inner-nav" id="inner-log-links">
+          <a href="#">
+            <div class="inner-nav-link">
+              Activity Log
+            </div>
+          </a>
+          <a href="#">
+            <div class="inner-nav-link">
+              Deal History Log
+            </div>
+          </a>
+        </div>
+        <a href="#">
+          <div class="sidenav-link">
+            My Productivity Report
+          </div>
+        </a>
+
+      </div>
+    </nav>
+
+    <main class="p-3">
+      <div class="d-lg-none d-flex justify-content-end">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mobile-menu" viewBox="0 0 20 20" fill="currentColor" id="mobile-menu">
+          <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+        </svg>
+      </div>
+
+      <div class="mt-3 d-flex justify-content-between align-items-center">
+        <div class="position-relative">
+          <input class="form-control form-control-sm ps-4" type="text" placeholder="Enter Keywords">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 search-icon" fill="none" viewBox="0 0 24 24" stroke="gray">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </div>
+        <div class="d-flex">
+          <div class="dropdown me-3 mt-1">
+            <div class="fs-6 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              EN
+            </div>
+          </div>
+          <div class="top-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <div class="top-icons">
+            <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="gray">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+            </svg>
+          </div>
+
+          <button type="button" class="btn btn-sm  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"> <img src="images/avatar.jpg" alt="" width="30px" style="margin-top: -5px;">
+          </button>
+          <ul class="dropdown-menu shadow" style="width: 200px;">
+            <div class="p-0 m-0">
+              <a class="dropdown-item" href="#">
+                Fahim
+              </a>
+            </div>
+            <div class="p-0 m-0">
+              <hr class="dropdown-divider">
+            </div>
+
+            <div><a class="dropdown-item" href="#">My Profile</a></div>
+            <div>
+              <hr class="dropdown-divider">
+            </div>
+            <div><a class="dropdown-item" href="#">Settings</a></div>
+            <div>
+              <hr class="dropdown-divider">
+            </div>
+            <div><a class="dropdown-item" href="#">Chat</a></div>
+            <div>
+              <hr class="dropdown-divider">
+            </div>
+            <div><a class="dropdown-item" href="#">Logout</a></div>
+          </ul>
+        </div>
+      </div>    
+<!-- right side code for dashboard -->
+
+<!-- Search flight section start -->
+<div class="search-wrapper">
+    <div class="button-wrapper">
+        <div class="button-group">
+            <div class="oneway">One Way</div>
+            <div class="roundtrip">Round trip</div>
+            <div class="muticity">Muti-city</div>
+        </div>
+    </div>
+    <div class="destination-wrapper" >
+        <div class="visevarsa">
+            <img class="flight-icon" src="/images/visevarsa.svg" alt="visevarsa image">
+        </div>
+        <div class="from">
+            <p class="text-title">From</p>
+            <div class="from-text">
+                <img class="location-icon" src="/images/location-icon.svg" alt="">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Dhaka (DAC)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                  </select>
+            </div>
+        </div>
+        <div class="to">
+            <p class="text-title">To</p>
+            <div class="to-text">
+                <img class="location-icon" src="/images/location-icon.svg" alt="">
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>New York(JFK)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                    <option value="Dhaka (DAC)">Dhaka (DAC)</option>
+                  </select>
+            </div>
+        </div>
+        <div class="depart-on">
+            <img class="date-icon" src="/images/date-icon.svg" alt="date icon" class="date-icon">
+            
+            <div class="depart-text">
+                <p>Depart on</p>
+                <div id="datepickeer">
+                  <p>25 March Friday</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cabin-class">
+            <div class="cabin-text">
+            <p>passanger & Cabin Class</p>
+            <p>1 person</p>
+            <p class="depart-span">Econnomy Class</p>
+            </div>
+        </div>
+    </div>
+        <div class="search-box">
+            <img src="/images/flight-icon.svg" alt="search icon" class="flight-icon">
+        <p>Search Flight</p>
+    </div>
+</div>
+<!-- Search flight section end  -->
+
+<!-- Available tickets depend on date starts -->
+
+ <div class="available-tickets-wrapper">
+   <div class="container">
+  <div class="row slider">
+    <div class="col">
+      <div class="tickets-item">
+    <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+      <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+  </div>
+</div>
+ </div>
+
+
+<!-- Available tickets depend on date end -->
+
+<!-- available flights and prices start -->
+<div class="available-tickets-wrapper">
+   <div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="tickets-item">
+    <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+      <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+    <div class="col">
+     <div class="tickets-item">
+     <p>FRI,28 Mar</p>
+     <p>BDT135264</p>
+   </div>
+    </div>
+  </div>
+</div>
+ </div>
+<!-- available flights and prices end -->
+
+<!-- Ticket price on date -->
+
+</main>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+ <!-- jaqury CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Slick carosuel js CDN  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- External JavaScript -->
+  <script src="/js/airticket.js"></script>
+
+
+</body>
+
+</html>

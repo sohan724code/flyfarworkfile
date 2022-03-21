@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Package-quation-create-next</title>
+</head>
+
+<body>
+    <div class="page-container mb-5">
+        <!-- Side Navbar -->
+        <nav class="side-nav  d-lg-block" id="side-navbar" class="w-50 ms-4 mt-4">
+            <img src="images/logo.gif" alt="Fly Far Int Logo" width="230px" style=" margin-top: -20px;">
+
+            <div class="ms-4 " style="width: 80%;">
+                <a href="index.html">
+                    <div class="sidenav-link">
+                        Dashboard
+                    </div>
+                </a>
+
+                <div class="sidenav-link navlink-with-icon" id="inquery-btn">
+                    <span>Inquery Management</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow"
+                        id="inquery-arrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-inquery-links">
+                    <a href="Air-ticket-search.html">
+                        <div class="inner-nav-link">
+                            Air Ticket Search
+                        </div>
+                    </a>
+                    <a href="visaInformation.html">
+                        <div class="inner-nav-link">
+                            Visa Information
+                        </div>
+                    </a>
+                    <a href="passport-search.html">
+                        <div class="inner-nav-link">
+                            Passport Search
+                        </div>
+                    </a>
+                    <a href="FFL.html">
+                        <div class="inner-nav-link">
+                            FFL Package
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Trips Package
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Travel Rules
+                        </div>
+                    </a>
+                </div>
+
+
+
+                <a href="#">
+                    <div class="sidenav-link">
+                        Task Management
+                    </div>
+                </a>
+
+                <a href="#">
+                    <div class="sidenav-link">
+                        Requirements
+                    </div>
+                </a>
+                <div class="sidenav-link navlink-with-icon" id="quation-btn">
+                    <span>Quation</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow"
+                        id="quation-arrow" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-quation-links">
+                    <a href="packageQuation.html">
+                        <div class="inner-nav-link">
+                            Package Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Air Ticket Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Visa Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Hotel Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Travel Assitancy Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Inshurance Quation
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            General Quation
+                        </div>
+                    </a>
+                </div>
+                <div class="sidenav-link navlink-with-icon" id="invoice-btn">
+                    <span>Invoice</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow arrow-rotate"
+                        viewBox="0 0 20 20" fill="currentColor" id="invoice-arrow">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-invoice-links">
+                    <a href="visaInvoice.html">
+                        <div class="inner-nav-link">
+                            Visa Invoice
+                        </div>
+                    </a>
+                    <a href="visaInvoicePDF.html">
+                        <div class="inner-nav-link">
+                            Visa Invoice PDF
+                        </div>
+                    </a>
+
+                </div>
+
+                <a href="#">
+                    <div class="sidenav-link">
+                        Money Receipt
+                    </div>
+                </a>
+                <div class="sidenav-link navlink-with-icon" id="expense-btn">
+                    <span>Expense</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow arrow-rotate"
+                        viewBox="0 0 20 20" fill="currentColor" id="expense-arrow">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-expense-links">
+                    <a href="OfficeExpense.html">
+                        <div class="inner-nav-link">
+                            Vendor Payment
+                        </div>
+                    </a>
+                    <a href="OfficeExpense.html">
+                        <div class="inner-nav-link">
+                            Office Expenses
+                        </div>
+                    </a>
+                    <a href="OfficeExpense.html">
+                        <div class="inner-nav-link">
+                            Other Expenses
+                        </div>
+                    </a>
+                </div>
+                <a href="#">
+                    <div class="sidenav-link">
+                        Account Setup
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="sidenav-link">
+                        Chart of Account
+                    </div>
+                </a>
+                <div class="sidenav-link navlink-with-icon" id="report-btn">
+                    <span>Report</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow"
+                        viewBox="0 0 20 20" fill="currentColor" id="report-arrow">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-report-links">
+                    <a href="prepaidUnearnedReciveable.html">
+                        <div class="inner-nav-link">
+                            Account Report
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Admin Report
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Management Report
+                        </div>
+                    </a>
+                </div>
+                <a href="#">
+                    <div class="sidenav-link">
+                        Reconcile
+                    </div>
+                </a>
+                <div class="sidenav-link navlink-with-icon" id="log-btn">
+                    <span>Log</span> <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 nav-arrow"
+                        viewBox="0 0 20 20" fill="currentColor" id="log-arrow">
+                        <path fill-rule="evenodd"
+                            d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="inner-nav" id="inner-log-links">
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Activity Log
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="inner-nav-link">
+                            Deal History Log
+                        </div>
+                    </a>
+                </div>
+                <a href="#">
+                    <div class="sidenav-link">
+                        My Productivity Report
+                    </div>
+                </a>
+
+            </div>
+        </nav>
+
+        <main class="p-3">
+            <div class="d-lg-none d-flex justify-content-end">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mobile-menu" viewBox="0 0 20 20"
+                    fill="currentColor" id="mobile-menu">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+
+            <div class="mt-3 d-flex justify-content-between align-items-center">
+                <div class="position-relative">
+                    <input class="form-control form-control-sm ps-4" type="text" placeholder="Enter Keywords">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 search-icon" fill="none" viewBox="0 0 24 24"
+                        stroke="gray">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+                <div class="d-flex">
+                    <div class="dropdown me-3 mt-1">
+                        <div class="fs-6 dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            EN
+                        </div>
+                    </div>
+                    <div class="top-icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                    <div class="top-icons">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="" fill="none" viewBox="0 0 24 24" stroke="gray">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                        </svg>
+                    </div>
+
+                    <button type="button" class="btn btn-sm  dropdown-toggle" data-bs-toggle="dropdown"
+                        aria-expanded="false"> <img src="images/avatar.jpg" alt="" width="30px"
+                            style="margin-top: -5px;">
+                    </button>
+                    <ul class="dropdown-menu shadow" style="width: 200px;">
+                        <div class="p-0 m-0">
+                            <a class="dropdown-item" href="#">
+                                Fahim
+                            </a>
+                        </div>
+                        <div class="p-0 m-0">
+                            <hr class="dropdown-divider">
+                        </div>
+
+                        <div><a class="dropdown-item" href="#">My Profile</a></div>
+                        <div>
+                            <hr class="dropdown-divider">
+                        </div>
+                        <div><a class="dropdown-item" href="#">Settings</a></div>
+                        <div>
+                            <hr class="dropdown-divider">
+                        </div>
+                        <div><a class="dropdown-item" href="#">Chat</a></div>
+                        <div>
+                            <hr class="dropdown-divider">
+                        </div>
+                        <div><a class="dropdown-item" href="#">Logout</a></div>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class="row">
+                    <div class="col col-md-5 border-end border-dark  ">
+                        <h4>Deal Information</h4>
+                        <div class="row mt-3">
+                            <div class="col col-md-5" style="font-size: 15px;">Client Name</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5 " style="font-size: 15px;">Alin Sir</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">Pax Name</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Md Sahidur</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">PassportNo</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">3024889</div>
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">Package</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Dubai Visit</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">Deadline</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">19 feb 2022</div>
+                        </div>
+
+                        <div class="row mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">Deal Amount</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">1,35000 TK</div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col col-md-5" style="font-size: 15px;">QT No</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">QT0402348</div>
+                        </div>
+                    </div>
+
+                    <div class="col col-md-5 ms-auto ">
+                        <h4>Oparational Information</h4>
+                        <div class="row  mt-3">
+                            <div class="col col-md-6" style="font-size: 15px;">System Genarate Cost</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5 " style="font-size: 15px;">15896 Tk</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;">Modified Cost</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">1223456 TK</div>
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;">Profit/Loss</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">150003 TK</div>
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;">Deal By</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Fahim</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;"> QE By</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Fahim</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;"> Qt By</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Fahim</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;"> QT Createing Time By</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">02 Feb 20222 03:20 AM</div>
+                        </div>
+
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;">Revenue Approved By</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">Md Sahidur</div>
+                        </div>
+                        <div class="row  mt-2">
+                            <div class="col col-md-6" style="font-size: 15px;">Revenue Approval Date & time</div>
+                            <div class="col col-md-1">:</div>
+                            <div class="col col-md-5" style="font-size: 15px;">QT0402348</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h4 class="fw-bold">Deadline</h4>
+                <table class="w-50 mt-3">
+                    <tr class="text-center">
+                        <th class="text-center">Flight Deadline</th>
+                        <th class="text-center">Operational Deadline</th>
+
+                    </tr>
+                    <tr class="text-center">
+                        <td>10 March 2022</td>
+                        <td>05 March 2022</td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+
+            <div class="mt-5">
+                <table class="w-50 mt-3 ">
+                    <tr class="text-center">
+                        <th class="text-start"><span class="ms-2 fs-5">Visa</span></th>
+                        <th class="text-center">Vendor Cost</th>
+                        <th class="text-center">Modified Cost</th>
+
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Dubai Visa 01 Month(KB)</span></td>
+                        <td>15000 TK</td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Dubai Visa 03 Month(KB)</span></td>
+                        <td>15000 TK</td>
+                        <td></td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="mt-5">
+                <table class="w-50 mt-3 ">
+                    <tr class="text-center">
+                        <th class="text-start"><span class="ms-2 fs-5">Air Ticket</span></th>
+                        <th class="text-center">Vendor Cost</th>
+                        <th class="text-center">Modified Cost</th>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Transit Flight</span></td>
+                        <td>15000 TK</td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div class="mt-5">
+                <table class="w-50 mt-3" style="background-color: #FFFFFF;">
+                    <tr class="text-center">
+                        <th class="text-start"><span class="ms-2 fs-5">Other Service</span></th>
+                        <th class="text-center">Vendor Cost</th>
+                        <th class="text-center">Modified Cost</th>
+
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Document Assistancy</span></td>
+                        <td>15000 TK</td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Travel Assistancy</span></td>
+                        <td>15000 TK</td>
+                        <td></td>
+
+                    </tr>
+
+                </table>
+            </div>
+
+            <div class="mt-5">
+                <table class="w-50 mt-3">
+                    <tr class="text-start ">
+                        <td class="text-start border-top rounded-top "><span class="ms-2">Deal price</span></td>
+                        <td class="w-50 border-top rounded-top"></td>
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start "><span class="ms-2">System Gernerate Cost Was</span></td>
+                        <td></td>
+
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Modified Cost</span></td>
+                        <td></td>
+
+                    </tr>
+
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Service Charge</span></td>
+                        <td></td>
+
+                    </tr>
+                    <tr class="text-center">
+                        <td class="text-start"><span class="ms-2">Loss/Profit</span></td>
+                        <td></td>
+
+                    </tr>
+
+
+                </table>
+            </div>
+
+            <div class="mt-4">
+                <div class=" w-100 ">
+                    <span>Note Of Deal Person</span> <br />
+                    <textarea class=" mt-2" name="" id="" cols="50" rows="3"></textarea>
+                </div>
+            </div>
+
+
+            <div class="mt-4">
+                <div class=" w-100 ">
+                    <span>Date Approval Note</span> <br />
+                    <textarea class=" mt-2" name="" id="" cols="50" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class=" w-100 ">
+                    <span>Note Of Operation</span> <br />
+                    <textarea class=" mt-2" name="" id="" cols="50" rows="3"></textarea>
+                </div>
+            </div>
+
+            <div class="mt-4">
+                <div class=" w-100 ">
+                    <span>Note For Client</span> <br />
+                    <textarea class=" mt-2" name="" id="" cols="50" rows="3"></textarea>
+                </div>
+            </div>
+
+
+            <div class="mt-4">
+                <span class="fw-bold">Terms and Conditions</span>
+
+                <ul class="mt-2">
+                    <li>The Given Soles Quatioin is valid for 15 min to Accept.After that the price change anytime</li>
+                    <li> No Discount Applicable after accepting this quation </li>
+
+
+                </ul>
+            </div>
+
+            <div class="mt-3 w-50  text-end" style="margin-left: 150px;">
+                <button class="btn btn-outline-primary text-dark text-light px-3 py-2 rounded-pill">Print</button>
+                <a href="Package-QuationPDF.html"> <button
+                        class=" btn bg-primary text-light px-3 py-2 rounded-pill ms-3">Download Client Copy</button></a>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
