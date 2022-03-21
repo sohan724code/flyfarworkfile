@@ -121,11 +121,11 @@ multicity.click(() => {
 
 //slick carosuel
 $(".slider").slick({
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 300,
-  slidesToShow: 2,
-  slidesToScroll: 2,
+  slidesToShow: 4,
+  slidesToScroll: 4,
   responsive: [
     {
       breakpoint: 1024,
