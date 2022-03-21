@@ -129,6 +129,25 @@ visevarsabtn.click(() => {
   toval.val(tempval);
 });
 //swap button ends
+// new js
+// const journeyFrom = document.getElementById("journey-from");
+// const journeyTo = document.getElementById("journey-to");
+
+const journeyDateEl = document.getElementById("journey-date-container");
+const returnDateEl = document.getElementById("return-date-container");
+const locationContainerEl = document.getElementById("location-container");
+
+function changeJourneyType(type) {
+  if (type == "one-way") {
+    returnDateEl.classList.add("d-none");
+    locationContainerEl.classList.add("one-way-location-container");
+  } else {
+    returnDateEl.classList.remove("d-none");
+    locationContainerEl.classList.remove("one-way-location-container");
+  }
+}
+
+// new js
 
 //slick carosuel
 $(".slider").slick({
