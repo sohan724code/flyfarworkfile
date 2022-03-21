@@ -119,13 +119,26 @@ multicity.click(() => {
   multicity.css("background-color", "#3751ff");
 });
 
+//swap button starts
+const visevarsabtn = $(".visevarsa");
+const fromval = $("#fromval").change();
+const toval = $("#toval").change();
+visevarsabtn.click(() => {
+  const tempval = fromval.val();
+  fromval.val(toval.val());
+  toval.val(tempval);
+});
+//swap button ends
+
 //slick carosuel
 $(".slider").slick({
   dots: false,
   infinite: true,
   speed: 300,
-  slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToShow: 8,
+  slidesToScroll: 8,
+  prevArrow: '<button class="slide-arrow prev-arrow"></button>',
+  nextArrow: '<button class="slide-arrow next-arrow"></button>',
   responsive: [
     {
       breakpoint: 1024,
@@ -133,7 +146,7 @@ $(".slider").slick({
         slidesToShow: 3,
         slidesToScroll: 3,
         infinite: true,
-        dots: true,
+        dots: false,
       },
     },
     {

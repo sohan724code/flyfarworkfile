@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+/* search flight section starts  */
+
+.search-wrapper {
+  width: 100%;
+  margin: 20px 0 20px 0;
+  height: 300px;
+  background-color: #deedfe;
+  border: 1px solid #3751ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.form-select {
+  background-color: transparent !important;
+  border: none !important;
+  outline: none !important;
+}
+select:focus {
+  outline: none;
+  border-color: #719ece;
+  border: none;
+}
+.depart-span {
+  color: #3751ff;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 700px;
+  border-radius: 40px;
+  margin-bottom: 20px;
+}
+.button-group div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+  height: 40px;
+  width: 95%;
+  background-color: #f0f0f0;
+}
+.oneway {
+  border-radius: 40px 0 0 40px;
+}
+.muticity {
+  border-radius: 0 40px 40px 0;
+}
+
+.destination-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #333; */
+  width: 90%;
+  height: 100px;
+  position: relative;
+}
+
+.from,
+.to {
+  padding-left: 10px;
+  height: 65px;
+  width: 25%;
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+  margin-right: 10px;
+  padding-left: 15px;
+  padding-top: 5px;
+  cursor: pointer;
+}
+.from-text,
+.to-text {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+#datepicker {
+  width: 150px;
+  height: 30px;
+  border: none;
+  font-size: 13px;
+  color: #999;
+}
+
+.depart-on,
+.cabin-class {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  height: 65px;
+  width: 25%;
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+  margin-right: 10px;
+  padding-left: 20px;
+  cursor: pointer;
+}
+.text-title {
+  font-size: 14px;
+  color: black;
+}
+
+.destination-wrapper .visevarsa {
+  height: 40px;
+  width: 40px;
+  background-color: #0d6efd;
+  border-radius: 50%;
+  position: absolute;
+  top: 30px;
+  left: 265px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border: none;
+}
+.search-box {
+  background-color: #0d6efd;
+  width: 180px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f0f0f0;
+  border-radius: 20px;
+  margin-top: 30px;
+}
+
+.location-icon {
+  filter: invert(31%) sepia(50%) saturate(3319%) hue-rotate(207deg)
+    brightness(97%) contrast(106%);
+  width: 25px;
+}
+
+.date-icon {
+  filter: invert(31%) sepia(50%) saturate(3319%) hue-rotate(207deg)
+    brightness(97%) contrast(106%);
+  width: 25px;
+  cursor: pointer;
+}
+.flight-icon {
+  filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(306deg)
+    brightness(102%) contrast(102%);
+  width: 25px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.dateinput {
+  width: 50px;
+  border: none;
+}
+/* search flight section ends  */
+    </style>
+  </head>
+  <body>
+
+    <div class="search-wrapper">
+        <form action="" method="post">
+            <div class="d-flex">
+                <div class="button-wrapper">
+        <div class="button-group">
+            <div class="oneway">One Way</div>
+            <div class="roundtrip">Round trip</div>
+            <div class="muticity">Muti-city</div>
+        </div>
+    </div>
+                <div class="d-flex" style="margin-top: -10px;">
+                    <div class="dropdown">
+                        <button class="btn d-flex align-items-center " type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn d-flex align-items-center " type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Class <i style="color: #2FB21E; font-size: 20px; display: block;"
+                                class="fas fa-caret-down ms-1"></i>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="location-container" id="location-container">
+
+                <div class="h-full">
+                    <input list="places-list" class="journey-input" value="Dhaka (Dac)" id="journey-from">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="20px" fill="none" viewBox="0 0 24 24"
+                        stroke="gray">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <!-- Swap Button -->
+                    <button class="swap-btn2" id="swap-btn2" type="button"><svg xmlns="http://www.w3.org/2000/svg"
+                            class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="white">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                        </svg></button>
+
+                    <input list="places-list" class="journey-input" value="Chottogram (Ctg)" id="journey-to">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" width="20px" fill="none" viewBox="0 0 24 24"
+                        stroke="gray">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <!-- datalist -->
+                    <datalist id="places-list">
+                        <option value="Dhaka (Dac)">
+                        <option value="Chottogram (Ctg)">
+                        <option value="Sylhet (Syh)">
+                        <option value="Rajshahi (Raj)">
+                    </datalist>
+                </div>
+                <div class="calender-box" id="journey-date-container">
+                    <p class="journey-title text-secondary">Journey Date</p>
+                    <!-- <h6 class="date-title"><span style="color:green">25</span> March</h6>
+                    <p class="day-title">Friday</p> -->
+
+                    <input type="date" class="date-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ms-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+                <div class="calender-box" id="return-date-container">
+                    <p class="journey-title text-secondary">Return Date</p>
+
+                    <!-- <h6 class="date-title"><span style="color:green">18</span> April</h6> -->
+                    <!-- <p class="day-title">Sunday</p> -->
+                    <input type="date" class="date-input">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ms-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                </div>
+            </div>
+        </form>
+        <script>
+            const swapBtn2 = document.getElementById('swap-btn2');
+            const journeyFrom = document.getElementById('journey-from');
+            const journeyTo = document.getElementById('journey-to');
+
+swapBtn2.addEventListener('click', function () {
+    const tempValue2 = journeyFrom.value;
+    journeyFrom.value = journeyTo.value;
+    journeyTo.value = tempValue2;
+});
+
+const journeyDateEl = document.getElementById('journey-date-container');
+const returnDateEl = document.getElementById('return-date-container');
+const locationContainerEl = document.getElementById('location-container');
+
+function changeJourneyType(type) {
+    if (type == 'one-way') {
+        returnDateEl.classList.add('d-none');
+        locationContainerEl.classList.add('one-way-location-container');
+    } else {
+        returnDateEl.classList.remove('d-none')
+        locationContainerEl.classList.remove('one-way-location-container');
+    }
+}
+        </script>
+  </body>
+</html>
