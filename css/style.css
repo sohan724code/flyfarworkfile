@@ -7,8 +7,6 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0px;
-  padding: 0px;
   font-family: "Poppins", sans-serif;
 }
 
@@ -118,35 +116,40 @@ body::-webkit-scrollbar-thumb {
   width: 30px;
 }
 /**** Main Dashboard Contents ****/
+/* CSS of airticket.html start */
 main {
   margin: 20px 0 20px 0;
 }
 /* search flight section starts  */
 
 .search-wrapper {
-  width: 100%;
-  margin: 20px 0 20px 0;
-  height: 300px;
-  background-color: #deedfe;
-  border: 1px solid #3751ff;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #deedfe;
+  border: 1px solid #3751ff;
+  margin-top: 53px;
   border-radius: 10px;
+  padding: 10px;
+  padding-top: 30px !important;
+  padding-bottom: 53px !important;
+  position: relative;
 }
+
 .form-select {
   background-color: transparent !important;
   border: none !important;
   outline: none !important;
 }
-select:focus {
-  outline: none;
-  border-color: #719ece;
-  border: none;
-}
+
 .depart-span {
   color: #3751ff;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .button-group {
@@ -158,7 +161,7 @@ select:focus {
   border-radius: 40px;
   margin-bottom: 20px;
 }
-.button-group div {
+.button-group > div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -184,6 +187,9 @@ select:focus {
   position: relative;
 }
 
+.destination-wrapper > div {
+  background-color: white;
+}
 .from,
 .to {
   padding-left: 10px;
@@ -213,19 +219,9 @@ select:focus {
   font-weight: 500;
   height: 35px;
 }
-
-.from-control:focus {
-  outline: none !important;
+input {
+  outline: none;
 }
-
-#datepicker {
-  width: 150px;
-  height: 30px;
-  border: none;
-  font-size: 13px;
-  color: #999;
-}
-
 .depart-on,
 .cabin-class {
   display: flex;
@@ -254,14 +250,15 @@ select:focus {
   background-color: #0d6efd;
   border-radius: 50%;
   position: absolute;
-  top: 30px;
-  left: 265px;
+  top: 28%;
+  left: 23%;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
   border: none;
 }
+
 .search-box {
   background-color: #0d6efd;
   width: 180px;
@@ -271,7 +268,7 @@ select:focus {
   align-items: center;
   color: #f0f0f0;
   border-radius: 20px;
-  margin-top: 30px;
+  margin: 30px auto 0;
 }
 
 .location-icon {
@@ -293,10 +290,7 @@ select:focus {
   font-weight: 900;
   cursor: pointer;
 }
-.dateinput {
-  width: 50px;
-  border: none;
-}
+
 /* search flight section ends  */
 
 /* available tickets starts  */
@@ -342,6 +336,7 @@ select:focus {
   height: 30px;
   border-radius: 50%;
   margin-top: 15px;
+  object-fit: cover;
 }
 .flights {
   display: flex;
@@ -383,83 +378,12 @@ select:focus {
 /* slider css ends */
 /* available tickets ends  */
 
-.card-box {
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid transparent;
-  border-top: 5px solid transparent;
-}
-
-.card-box h6 {
-  color: gray;
-  text-align: center;
-  margin-top: 13px;
-}
-.card-box h5 {
-  font-weight: 700;
-  text-align: center;
-}
-
-.card-box:hover {
-  border-color: #3751ff;
-  color: #3751ff;
-}
-.card-box:hover h6 {
-  color: #3751ff !important;
-}
-
-.modal-btn:focus {
-  border: none !important;
-  outline: none !important;
-}
-
-.img-container {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.img-con1 {
-  background-color: #fdedd0;
-}
-.img-con2 {
-  background-color: #fbdbde;
-}
-.img-con3 {
-  background-color: #deedfe;
-}
-
-.img-con4 {
-  background-color: #fdedd3;
-}
-
 .search-icon {
   position: absolute;
   width: 15px;
   top: 8px;
   left: 5px;
   z-index: 100;
-}
-
-.top-icons {
-  border-radius: 50%;
-  width: 33px;
-  height: 33px;
-  background-color: #eff0f6;
-  color: gray;
-  margin-right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.top-icons svg {
-  width: 20px;
 }
 
 @media all and (max-width: 991px) {
@@ -656,21 +580,11 @@ select:focus {
 }
 
 /* prepaid */
-.dropdown:focus {
-  border: none !important;
-}
-.dropdown-menu:focus {
-  border: none !important;
-}
 
 /* package-quation */
 .arrow {
   background-color: #3751ff;
   color: white;
-}
-
-.place:focus {
-  outline: none;
 }
 
 .visit-btn {
@@ -729,10 +643,6 @@ select:focus {
   font-weight: bold;
   width: 175px;
   padding-left: 45px;
-}
-
-.select-input:focus {
-  outline: none;
 }
 
 .swap-btn {
@@ -820,9 +730,6 @@ table tr:last-child td:last-child {
   padding-left: 50px;
   border-radius: 10px;
 }
-.location2-input:focus {
-  outline: none;
-}
 
 .input-con {
   position: relative;
@@ -905,9 +812,6 @@ select {
   text-overflow: "";
   background-color: white;
 }
-select:focus {
-  outline: none;
-}
 
 .ats-icon {
   color: #3751ff;
@@ -934,17 +838,9 @@ input[type="date"] {
   background-color: white !important;
 }
 
-input[type="date"]:focus {
-  outline: none;
-}
-
 .ats-input {
   border: none;
   width: 100% !important;
-}
-
-.ats-input:focus {
-  outline: none;
 }
 
 .ats-swap-btn {
@@ -999,10 +895,6 @@ input[type="date"]:focus {
 .tab-btn {
   color: gray;
   font-size: 11px;
-}
-.tab-btn:focus {
-  color: #3751ff;
-  border: none;
 }
 
 .tab-btn:hover {
@@ -1127,10 +1019,6 @@ input[type="date"]:focus {
   border: none;
   border-radius: 7px;
   font-weight: 500;
-}
-.ffl-form-container input:focus {
-  border: none;
-  outline: none;
 }
 
 .float-text {

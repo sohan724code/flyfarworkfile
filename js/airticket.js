@@ -101,7 +101,7 @@ const oneway = $(".oneway");
 const roundtrip = $(".roundtrip");
 const multicity = $(".muticity");
 
-// button color
+// button Click behaviour
 oneway.click(() => {
   oneway.css("background-color", "#3751ff");
   roundtrip.css("background-color", "#f0f0f0");
@@ -128,7 +128,6 @@ visevarsabtn.click(() => {
   fromval.val(toval.val());
   toval.val(tempval);
 });
-//swap button ends
 
 //slick carosuel
 $(".slider").slick({
