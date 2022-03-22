@@ -707,22 +707,22 @@
       <!-- flihths results section -->
 
       <!-- Button group section starts  -->
-      <div class="btn-group shadow" role="group" aria-label="Basic example">
+      <div class="btn-group" role="group" aria-label="Basic example">
         <button type="button" class="btn custom-button rounded">
           <div>
-            <img src="" alt="">
-            <span>Invoice Ammount</span>
+            <img src="./images/invoice-amount.svg" alt="">
+            <span>Invoice Amount</span>
           </div>
         </button>
         <button type="button" class="btn custom-button rounded">
           <div>
-            <img src="" alt="">
+            <img src="./images/select-flight.svg" alt="">
             <span>Select</span>
           </div>
         </button>
         <button type="button" class="btn custom-button rounded">
           <div>
-            <img src="" alt="">
+            <img src="./images/select-payment-type.svg" alt="">
             <span>Select</span>
           </div>
         </button>
@@ -732,10 +732,10 @@
       <!-- Flight details and Price details section starts -->
       <div class=" mt-5 shadow mb-5 p-3 flight-details-wrapper">
         <div class="ms-5">
-          <span class="fs-5 fw-bold">Emirates Airlines</span>
+          <span class="fs-3 fw-normal">Emirates Airlines</span>
         </div>
         <div class="d-flex justify-content-between px-5 py-4">
-          <div class="d-flex">
+          <div class="d-flex w-30">
             <div>
               <img class="rounded-circle" src="images/emirates.png" alt="" width="50px">
             </div>
@@ -743,6 +743,7 @@
               <span class="fs-5 fw-bold">DAC,Dhaka</span> <br>
               <span class="text-secondary">23:00AM Sat,19 mar,22</span>
             </div>
+            <img class="arrow-12" src="./images/Arrow_12.svg" alt="arrow image">
           </div>
           <div class="ms-3">
             <span class="fs-5 fw-bold">JFK,NEW YORK</span> <br>
@@ -792,9 +793,9 @@
               </h2>
 
               <!-- accordion body starts -->
-              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              <div id="collapseOne" class=" accordion-collapse collapse" aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample">
-                <div class="accordion-body">
+                <div class="dased-border accordion-body">
                   <div class="row">
 
                     <div class="col col-md-12">
@@ -807,8 +808,8 @@
                             </button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button class="nav-link tab-btn " id="" data-bs-toggle="tab" data-bs-target="" type="button"
-                              role="tab" aria-controls="home" aria-selected="true">
+                            <button class="nav-link tab-btn " id="home2-tab" data-bs-toggle="tab" data-bs-target="home2"
+                              type="button" role="tab" aria-controls="home2" aria-selected="true">
                               Fare Summary
                             </button>
                           </li>
@@ -847,7 +848,7 @@
                             <div class="w-100 fw-bold mt-5 d-flex justify-content-center text-primary fw-bold fs-5 ">
                               DAC-JFK
                             </div>
-                            <div class="tab-row border-dark py-3">
+                            <div class="tab-row py-3">
 
                               <div class="container">
                                 <div class="row">
@@ -900,31 +901,32 @@
                                       <span class=" fs-5">23:00</span><br>
 
                                     </div>
-                                    <div class="col col-md-4 flight-detail-item">
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
 
-                                      <div>
-                                        <span class="fw-bold fs-10">09:55-13:25</span><br>
-                                        <span class="fs-4 text-secondary">Sat,19 mar, 22</span><br>
-                                        <span class="fs-4 text-secondary">DHAKA - NEW-YORK</span><br>
-                                        <span class="fs-4 text-secondary">BOING 777-300ER | EK</span><br>
-                                      </div>
-
+                                    <div>
+                                      <span class="fw-bold fs-10">09:55-13:25</span><br>
+                                      <span class="fs-4 text-secondary">Sat,19 mar, 22</span><br>
+                                      <span class="fs-4 text-secondary">DHAKA - NEW-YORK</span><br>
+                                      <span class="fs-4 text-secondary">BOING 777-300ER | EK</span><br>
                                     </div>
-                                    <div class="col col-md-4 flight-detail-item">
 
-                                      <div>
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
 
-                                        <span class="fw-bold fs-10">Duration</span><br>
-                                        <span class="fs-4 text-secondary">05h 25min</span><br>
-                                        <span class="fs-4 text-danger fw-italic">EK25</span><br>
-                                        <span class="fs-4 text-secondary">Class:M</span><br>
-                                      </div>
+                                    <div>
+
+                                      <span class="fw-bold fs-10">Duration</span><br>
+                                      <span class="fs-4 text-secondary">05h 25min</span><br>
+                                      <span class="fs-4 text-danger fw-italic">EK25</span><br>
+                                      <span class="fs-4 text-secondary">Class:M</span><br>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                          </div>
+                          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                           <div class="row border-bottom border-dark py-3 mt-2">
                             <div class="col col-md-4 text-secondary">
                               <span class="ms-2">Profit Ammount</span>
@@ -947,7 +949,7 @@
                             </div>
                           </div>
                         </div> -->
-                            <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                          <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                           <div class="row mt-3 pb-3" style="border-bottom: 1px dashed gray">
                             <div class="col col-md-6 ms-3">
                               <span class="text-secondary">Time Frame</span>
@@ -1012,7 +1014,7 @@
                             </span>
                           </div>
                         </div> -->
-                            <!-- <div class="tab-pane fade" id="Data" role="tabpanel" aria-labelledby="contact-tab">
+                          <!-- <div class="tab-pane fade" id="Data" role="tabpanel" aria-labelledby="contact-tab">
                           <div class="row mt-3 pb-3" style="border-bottom: 1px dashed gray">
                             <div class="col col-md-6 ms-3">
                               <span class="text-secondary">Time Frame</span>
@@ -1077,7 +1079,7 @@
                             </span>
                           </div>
                         </div> -->
-                            <!-- <div class="tab-pane fade" id="Baggage" role="tabpanel" aria-labelledby="contact-tab">
+                          <!-- <div class="tab-pane fade" id="Baggage" role="tabpanel" aria-labelledby="contact-tab">
                           <div class="row border-bottom border-dark py-3 mt-2">
                             <div class="col col-md-4 text-secondary">
                               <span class="ms-2">Flight</span>
@@ -1096,18 +1098,18 @@
                             <div class="col col-md-4 text-secondary">2</div>
                           </div>
                         </div> -->
-                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- accordion body ends -->
               </div>
+              <!-- accordion body ends -->
             </div>
           </div>
         </div>
-        <!-- Flight details and Price details section ends -->
+      </div>
+      <!-- Flight details and Price details section ends -->
 
     </main>
 

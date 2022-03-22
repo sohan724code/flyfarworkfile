@@ -406,22 +406,28 @@ input {
 /* Button group section starts  */
 .custom-button {
   background-color: #3751ff;
-  margin-left: 10px !important;
   height: 50px;
   color: #f0f0f0;
+  font-size: 18px;
 }
 
 .custom-button:first-child {
-  width: 300px;
+  width: 250px;
 }
 
-.custom-button:nth-child(2) {
-  width: 150px;
-}
+.custom-button:nth-child(2),
 .custom-button:nth-child(3) {
-  width: 150px;
+  width: 120px;
+  margin-left: 10px !important;
+}
+.custom-button:hover {
+  color: white !important;
 }
 /* Flight details and Price details section starts */
+.arrow-12 {
+  width: 25%;
+  margin-left: 5%;
+}
 .flight-details-wrapper {
   border: 10px 10px 0 0;
   border-bottom: 1px dashed black;
@@ -435,6 +441,13 @@ input {
   object-fit: cover;
   border-radius: 50%;
   margin: 10px 20px;
+}
+.accordion-header {
+  margin: 1rem 0;
+}
+
+.dased-border {
+  border-top: 1px dashed #000;
 }
 
 .accordion-item {
@@ -457,13 +470,8 @@ input {
 /* Flight details and Price details section starts */
 .nav {
   border: none;
-  width: 53% !important;
+  width: 70% !important;
   margin: 0 auto;
-}
-.nav-item {
-  color: #0d6efd;
-  font-size: 20px !important;
-  border-bottom: 1px solid #000 !important;
 }
 /* Flight details and Price details section ends */
 
@@ -977,7 +985,7 @@ input[type="date"] {
 
 .tab-btn {
   color: gray;
-  font-size: 11px;
+  font-size: 16px;
 }
 
 .tab-btn:hover {
@@ -986,9 +994,7 @@ input[type="date"] {
 }
 
 .tab-row {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  gap: 2px;
+  padding: 0 5%;
 }
 .nav-item .active {
   color: #3751ff !important;
@@ -997,7 +1003,7 @@ input[type="date"] {
 }
 .nav-item {
   border: none !important;
-  border-bottom: 1px solid transparent !important;
+  border-bottom: 1px solid #999 !important;
 }
 
 .important {
