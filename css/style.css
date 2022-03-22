@@ -291,6 +291,14 @@ input {
   cursor: pointer;
 }
 
+.search-icon {
+  position: absolute;
+  width: 15px;
+  top: 8px;
+  left: 5px;
+  z-index: 100;
+}
+
 /* search flight section ends  */
 
 /* available tickets starts  */
@@ -378,13 +386,88 @@ input {
 /* slider css ends */
 /* available tickets ends  */
 
-.search-icon {
-  position: absolute;
-  width: 15px;
-  top: 8px;
-  left: 5px;
-  z-index: 100;
+/* flights results section starts */
+
+.custom-alert {
+  margin-top: 10px;
+  background-color: transparent;
+  display: flex;
 }
+.custom-alert img {
+  width: 2%;
+  margin-right: 8px;
+  transform: rotate(178deg);
+  filter: invert(60%) sepia(17%) saturate(6004%) hue-rotate(320deg)
+    brightness(107%) contrast(123%);
+}
+
+/* flights results section ends  */
+
+/* Button group section starts  */
+.custom-button {
+  background-color: #3751ff;
+  margin-left: 10px !important;
+  height: 50px;
+  color: #f0f0f0;
+}
+
+.custom-button:first-child {
+  width: 300px;
+}
+
+.custom-button:nth-child(2) {
+  width: 150px;
+}
+.custom-button:nth-child(3) {
+  width: 150px;
+}
+/* Flight details and Price details section starts */
+.flight-details-wrapper {
+  border: 10px 10px 0 0;
+  border-bottom: 1px dashed black;
+}
+.flight-detail-item {
+  display: flex;
+}
+.flight-detail-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 10px 20px;
+}
+
+.accordion-item {
+  border: none;
+}
+
+.custom-collapse-btn {
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px;
+  display: flex;
+}
+.custom-collapse-btn img {
+  width: 20px;
+  margin-left: 3px;
+  filter: invert(22%) sepia(86%) saturate(3489%) hue-rotate(233deg)
+    brightness(102%) contrast(101%);
+}
+
+/* Flight details and Price details section starts */
+.nav {
+  border: none;
+  width: 53% !important;
+  margin: 0 auto;
+}
+.nav-item {
+  color: #0d6efd;
+  font-size: 20px !important;
+  border-bottom: 1px solid #000 !important;
+}
+/* Flight details and Price details section ends */
+
+/* Button group section ends */
 
 @media all and (max-width: 991px) {
   .page-container {
