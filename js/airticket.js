@@ -129,6 +129,10 @@ visevarsabtn.click(() => {
   toval.val(tempval);
 });
 
+// datepicker
+$(function () {
+  $("#datepicker").datepicker();
+});
 //slick carosuel
 $(".slider").slick({
   dots: false,

@@ -23,6 +23,10 @@
     integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+  <!-- jquery datepicker theme css  -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 
@@ -397,8 +401,8 @@
 
             <div class="depart-text">
               <p>Depart on</p>
-              <div id="datepickeer">
-                <p>25 March Friday</p>
+              <div>
+                <p><input type="text" name="depart-date" id="datepicker"></p>
               </div>
             </div>
           </div>
@@ -763,7 +767,7 @@
           </div>
           <div>
             <span class="fs-5 fw-bold">BDT 11,25469</span> <br>
-            <button class="btn btn-primary">Book Ticket</button>
+            <button class="btn btn-primary mt-2">Book Ticket</button>
           </div>
         </div>
 
@@ -773,13 +777,17 @@
               <h2 class="accordion-header" id="headingOne">
                 <div class="w-100 row">
 
-                  <div class="col col-4 fs-5 d-flex justify-content-center align-items-center">
-                    <span class="d-block ms-5 me-3 fs-10 text-secondary">Economy</span>
+                  <div class="col col-5 fs-5 d-flex justify-content-end align-items-center">
+                    <span class="d-block  me-5 fs-16 text-secondary">Economy</span>
                     <img src="./images/dollersign.svg" alt="">
                     <span class="d-block ms-2 text-danger"> Non Refundable</span>
                   </div>
-                  <div class="col col-4 text-secondary d-flex justify-content-sart align-items-center fs-5">
-                    her e will be bunch of icons
+                  <div class="col col-3 text-secondary d-flex justify-content-sart align-items-center fs-5">
+                    <img class="me-3" src="./images/wifi-img.svg" alt="">
+                    <img class="me-3" src="./images/tv-image.svg" alt="">
+                    <img class="me-3" src="./images/hexagone-img.svg" alt="">
+                    <img class="me-3" src="./images/plate-and-spoon.svg" alt="./images/drinks-img.svg">
+                    <img class="me-3" src="./images/drinks-img.svg" alt="">
                   </div>
                   <div class="col col-4 d-flex justify-content-end custom-focus">
                     <a type="button" class="accordion collapsed custom-collapse-btn  w-50  " data-bs-toggle="collapse"
@@ -845,8 +853,8 @@
                         </ul>
                         <div class="tab-content" id="myTabContent">
                           <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="w-100 fw-bold mt-5 d-flex justify-content-center text-primary fw-bold fs-5 ">
-                              DAC-JFK
+                            <div class="w-100 fw-bold my-5 d-flex justify-content-center text-primary fw-bold fs-5 ">
+                              <span class="home-tab-title">DAC-JFK</span>
                             </div>
                             <div class="tab-row py-3">
 
@@ -855,21 +863,23 @@
                                   <div class="col col-md-4 flight-detail-item">
                                     <img src="./images/emirates.png" alt="">
                                     <div>
-                                      <span class="fw-bold fs-10">Emirates</span><br>
-                                      <span class=" fs-5">Economy</span><br>
-                                      <span class=" fs-5">RDM:M</span><br>
-                                      <span class="fs-4 text-secondary">Sat, 19 mar,'22</span><br>
-                                      <span class=" fs-5">23:00</span><br>
+                                      <span class="fw-bold flight-detail-item-title">Emirates</span><br>
+                                      <span class=" flight-detail-item-subtitle">Economy</span><br>
+                                      <span class="flight-detail-item-subtitle">RDM:M</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat, 19
+                                        mar,'22</span><br>
+                                      <span class="flight-detail-item-subtitle">23:00</span><br>
                                     </div>
 
                                   </div>
                                   <div class="col col-md-4 flight-detail-item">
 
                                     <div>
-                                      <span class="fw-bold fs-10">09:55-13:25</span><br>
-                                      <span class="fs-4 text-secondary">Sat,19 mar, 22</span><br>
-                                      <span class="fs-4 text-secondary">DHAKA - DUBAI</span><br>
-                                      <span class="fs-4 text-secondary">BOING 777-300ER | EK</span><br>
+                                      <span class="fw-bold flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">DHAKA - DUBAI</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">BOING 777-300ER |
+                                        EK</span><br>
                                     </div>
 
                                   </div>
@@ -877,10 +887,10 @@
 
                                     <div>
 
-                                      <span class="fw-bold fs-10">Duration</span><br>
-                                      <span class="fs-4 text-secondary">05h 25min</span><br>
-                                      <span class="fs-4 text-danger fw-italic">EK25</span><br>
-                                      <span class="fs-4 text-secondary">Class:M</span><br>
+                                      <span class="fw-bold flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
+                                      <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
                                     </div>
                                   </div>
                                 </div>
@@ -888,27 +898,30 @@
 
                             </div>
 
-                            <div class="tab-row py-3">
+                            <div class="tab-row py-3 dased-border">
                               <div class="container">
                                 <div class="row">
                                   <div class="col col-md-4 flight-detail-item">
                                     <img src="./images/emirates.png" alt="">
                                     <div>
-                                      <span class="fw-bold fs-10">Emirates</span><br>
-                                      <span class=" fs-5">Economy</span><br>
-                                      <span class=" fs-5">RDM:M</span><br>
-                                      <span class="fs-4 text-secondary">Sat, 19 mar,'22</span><br>
-                                      <span class=" fs-5">23:00</span><br>
+                                      <span class="fw-bold flight-detail-item-title">Emirates</span><br>
+                                      <span class="flight-detail-item-subtitle">Economy</span><br>
+                                      <span class="flight-detail-item-subtitle">RDM:M</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat, 19
+                                        mar,'22</span><br>
+                                      <span class="flight-detail-item-subtitle">23:00</span><br>
 
                                     </div>
                                   </div>
                                   <div class="col col-md-4 flight-detail-item">
 
                                     <div>
-                                      <span class="fw-bold fs-10">09:55-13:25</span><br>
-                                      <span class="fs-4 text-secondary">Sat,19 mar, 22</span><br>
-                                      <span class="fs-4 text-secondary">DHAKA - NEW-YORK</span><br>
-                                      <span class="fs-4 text-secondary">BOING 777-300ER | EK</span><br>
+                                      <span class="fw-bold flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">DHAKA -
+                                        NEW-YORK</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">BOING 777-300ER |
+                                        EK</span><br>
                                     </div>
 
                                   </div>
@@ -916,10 +929,10 @@
 
                                     <div>
 
-                                      <span class="fw-bold fs-10">Duration</span><br>
-                                      <span class="fs-4 text-secondary">05h 25min</span><br>
-                                      <span class="fs-4 text-danger fw-italic">EK25</span><br>
-                                      <span class="fs-4 text-secondary">Class:M</span><br>
+                                      <span class="fw-bold flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
+                                      <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
                                     </div>
                                   </div>
                                 </div>
@@ -1120,10 +1133,15 @@
     <!-- jaqury CDN -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
       integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- jquery datepicker theme ui  -->
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
     <!-- Slick carosuel js CDN  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
       integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
       crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <!-- External JavaScript -->
     <script src="/js/airticket.js"></script>
 

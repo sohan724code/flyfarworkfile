@@ -447,11 +447,18 @@ input {
 }
 
 .dased-border {
-  border-top: 1px dashed #000;
+  border-top: 1px dashed #999;
 }
 
 .accordion-item {
   border: none;
+}
+.flight-detail-item-title {
+  font-size: 22px !important;
+}
+.flight-detail-item-subtitle {
+  font-size: 18px !important;
+  font-weight: 600;
 }
 
 .custom-collapse-btn {
@@ -465,6 +472,12 @@ input {
   margin-left: 3px;
   filter: invert(22%) sepia(86%) saturate(3489%) hue-rotate(233deg)
     brightness(102%) contrast(101%);
+}
+
+.home-tab-title {
+  color: #0d6efd;
+  font-size: 20px !important;
+  border-bottom: 2px solid #0d6efd;
 }
 
 /* Flight details and Price details section starts */
@@ -834,10 +847,6 @@ table tr:last-child td:last-child {
   left: 12px;
 }
 
-input::-webkit-calendar-picker-indicator {
-  opacity: 0;
-}
-
 /****** Air Ticket Search ******/
 .ats-form {
   border: 1px solid #3751ff;
@@ -1117,10 +1126,6 @@ input[type="date"] {
   padding: 0px 7px;
   top: -13px;
   left: 15px;
-}
-
-::-webkit-calendar-picker-indicator {
-  opacity: 0;
 }
 
 /* @media only screen and (max-width: 992px) {
