@@ -168,13 +168,14 @@ main {
   padding: 0 30px;
   height: 40px;
   width: 95%;
-  background-color: #f0f0f0;
 }
 .oneway {
   border-radius: 40px 0 0 40px;
+  background-color: #fff;
 }
 .muticity {
   border-radius: 0 40px 40px 0;
+  background-color: #fff;
 }
 
 .destination-wrapper {
@@ -239,6 +240,9 @@ input {
   padding-left: 20px;
   cursor: pointer;
 }
+.cabin-class {
+  position: relative;
+}
 .text-title {
   font-size: 14px;
   color: black;
@@ -298,11 +302,241 @@ input {
   left: 5px;
   z-index: 100;
 }
+/* when i click passenger and cabin section the this div will show starts  */
+.cabin-class-collapse-wrapper {
+  height: 300px;
+  width: 300px;
+  background-color: rgb(223, 223, 223);
+  border-radius: 5px;
+  position: absolute;
+  top: 110%;
+  right: 0;
+}
+/* when i click passenger and cabin section the this div will show ends  */
+
+/* jaquery datepicker custom style starts */
+
+.dateBox {
+  width: 200px;
+  height: auto;
+  border: 1px solid blue;
+}
+
+/* datepicker input style starts */
+#datepicker {
+  border: none;
+  font-size: 16px;
+}
+/* datepicker input style ends */
+
+/* jQuery UI Datepicker Styles */
+/* states and images */
+* {
+  margin: 0;
+  padding: 0;
+}
+.ui-icon {
+  display: block;
+  text-indent: -99999px;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+/* Overlays */
+.ui-widget-overlay {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.ui-datepicker {
+  position: relative;
+  width: 500px;
+  height: auto;
+  padding: 0;
+  display: none;
+  margin: 20px 0 0 23px;
+  top: 321.812px !important;
+  left: 914.312px !important;
+}
+.ui-datepicker .ui-datepicker-header {
+  position: relative;
+  padding: 0.2em 0;
+  background: #f8f8f8;
+}
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 5px;
+  width: 1.1em;
+  height: 0.9em;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 2px;
+  top: 7px;
+  background: url(../img/datepickerArrow.png) top no-repeat;
+}
+.ui-datepicker .ui-datepicker-next {
+  right: 2px;
+  background: url(../img/datepickerArrow.png) bottom no-repeat;
+}
+
+.ui-datepicker .ui-datepicker-prev span,
+.ui-datepicker .ui-datepicker-next span {
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -8px;
+  top: 50%;
+  margin-top: -8px;
+}
+.ui-datepicker .ui-datepicker-title {
+  margin: 0 2.3em;
+  line-height: 1.8em;
+  text-align: center;
+  font-size: 0.7em;
+}
+.ui-datepicker .ui-datepicker-title select {
+  font-size: 1em;
+  margin: 1px 0;
+}
+.ui-datepicker select.ui-datepicker-month,
+.ui-datepicker select.ui-datepicker-year {
+  width: 45%;
+}
+.ui-datepicker table {
+  width: 100%;
+  font-size: 0.6em;
+  border-collapse: collapse;
+  margin: 0 0 0.4em;
+}
+.ui-datepicker th {
+  padding: 0.7em 0.3em;
+  text-align: center;
+
+  border: 0;
+}
+.ui-datepicker td {
+  border: 0;
+  padding: 1px;
+}
+.ui-datepicker td span,
+.ui-datepicker td a {
+  display: block;
+  padding: 0.2em;
+  text-align: center;
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-buttonpane {
+  background-image: none;
+  margin: 0.7em 0 0 0;
+  padding: 0 0.2em;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+}
+.ui-datepicker .ui-datepicker-buttonpane button {
+  float: right;
+  margin: 0.5em 0.2em 0.4em;
+  cursor: pointer;
+  padding: 0.2em 0.6em 0.3em 0.6em;
+  width: auto;
+  overflow: visible;
+}
+.ui-datepicker .ui-datepicker-buttonpane button.ui-datepicker-current {
+  float: left;
+}
+
+/* Component containers
+----------------------------------*/
+.ui-widget {
+  font-size: 1.1em;
+}
+.ui-widget .ui-widget {
+  font-size: 5em;
+}
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea,
+.ui-widget button {
+  font-size: 1em;
+}
+.ui-widget-content {
+  border: 1px solid #dddddd;
+  color: #999999; /* Days Letter Color */
+}
+.ui-widget-content a {
+  color: #0d6efd;
+}
+.ui-widget-header {
+  border-bottom: 1px solid #c5c5c5;
+  color: #212020;
+  font-weight: bold;
+}
+.ui-widget-header a {
+  color: #0d6efd;
+}
+
+/* Interaction states
+----------------------------------*/
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default {
+  border: 1px solid #cccccc;
+  background: #f6f6f6;
+  color: #300808;
+}
+.ui-state-default a,
+.ui-state-default a:link,
+.ui-state-default a:visited {
+  color: #999999;
+  text-decoration: none;
+}
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-state-focus,
+.ui-widget-content .ui-state-focus,
+.ui-widget-header .ui-state-focus {
+  background: #1ca3f4;
+  color: #fff;
+  text-align: center;
+}
+.ui-state-hover a,
+.ui-state-hover a:hover,
+.ui-state-hover a:link,
+.ui-state-hover a:visited,
+.ui-state-focus a,
+.ui-state-focus a:hover,
+.ui-state-focus a:link,
+.ui-state-focus a:visited {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+}
+.ui-state-active a,
+.ui-state-active a:link,
+.ui-state-active a:visited {
+  color: #0d6efd;
+  text-decoration: none;
+}
+.ui-datepicker .ui-datepicker-prev:hover {
+  background: transparent url(../img/datepickerArrow.png) top no-repeat;
+}
+.ui-datepicker .ui-datepicker-next {
+  background: transparent url(../img/datepickerArrow.png) bottom no-repeat;
+}
+
+/* jaquery datepicker custom style ends */
 
 /* search flight section ends  */
 
 /* available tickets starts  */
-
 /* slider css starts */
 .slider {
   width: 100% !important;
@@ -430,7 +664,6 @@ input {
 }
 .flight-details-wrapper {
   border: 10px 10px 0 0;
-  border-bottom: 1px dashed black;
 }
 .flight-detail-item {
   display: flex;
@@ -486,9 +719,42 @@ input {
   width: 70% !important;
   margin: 0 auto;
 }
+.tab-content-icon-wrapper {
+  display: grid;
+  grid-template-columns: 18% 18% 25% 25%;
+  width: 80%;
+  height: 40px;
+  margin: 10px auto;
+}
+/* .tab-content-icon-item:first-child,
+.tab-content-icon-item:nth-child(2) {
+  width: 70%;
+} */
+/* .tab-content-icon-item:nth-child(3),
+.tab-content-icon-item:nth-child(4) {
+  width: 95%;
+} */
+.tab-content-icon-item img {
+  margin-right: 3%;
+}
 /* Flight details and Price details section ends */
 
 /* Button group section ends */
+
+/* pagination section starts  */
+.custom-page-link {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.custom-page-link:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* pagination section ends  */
 
 @media all and (max-width: 991px) {
   .page-container {

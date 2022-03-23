@@ -129,10 +129,27 @@ visevarsabtn.click(() => {
   toval.val(tempval);
 });
 
-// datepicker
+// set default value to datepicker starts
+const currentDate = $.datepicker.formatDate("dd MM DD", new Date());
+
+$.datepicker.setDefaults({
+  dateFormat: "dd MM DD",
+});
+
+$("#datepicker").val(currentDate);
+// set default value to datepicker ends
+// datepicker starts
 $(function () {
   $("#datepicker").datepicker();
 });
+//datepicker ends
+
+// stops pagination reloading starts
+$(".custom-paginatino-wrapper").submit(function (e) {
+  e.preventDefault(); // <==stop page refresh==>
+});
+// stops pagination reloading starts
+
 //slick carosuel
 $(".slider").slick({
   dots: false,
