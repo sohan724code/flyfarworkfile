@@ -823,8 +823,9 @@
                             </button>
                           </li>
                           <li class="nav-item" role="presentation">
-                            <button class="nav-link tab-btn " id="home2-tab" data-bs-toggle="tab" data-bs-target="home2"
-                              type="button" role="tab" aria-controls="home2" aria-selected="true">
+                            <button class="nav-link tab-btn " id="home2-tab" data-bs-toggle="tab"
+                              data-bs-target="#home2" type="button" role="tab" aria-controls="home2"
+                              aria-selected="true">
                               Fare Summary
                             </button>
                           </li>
@@ -869,7 +870,7 @@
                                   <div class="col col-md-4 flight-detail-item">
                                     <img src="./images/emirates.png" alt="">
                                     <div>
-                                      <span class="fw-bold flight-detail-item-title">Emirates</span><br>
+                                      <span class=" flight-detail-item-title">Emirates</span><br>
                                       <span class=" flight-detail-item-subtitle">Economy</span><br>
                                       <span class="flight-detail-item-subtitle">RDM:M</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Sat, 19
@@ -881,7 +882,7 @@
                                   <div class="col col-md-4 flight-detail-item">
 
                                     <div>
-                                      <span class="fw-bold flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class=" flight-detail-item-title">09:55-13:25</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">DHAKA - DUBAI</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">BOING 777-300ER |
@@ -893,7 +894,7 @@
 
                                     <div>
 
-                                      <span class="fw-bold flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-title">Duration</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
                                       <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
@@ -903,14 +904,18 @@
                               </div>
 
                             </div>
-
-                            <div class="tab-row py-3 dased-border">
+                            <!-- transit time-section starts -->
+                            <div class="transit-section">
+                              <span>Transit Time:08 Hour</span>
+                            </div>
+                            <!-- transit time-section ends -->
+                            <div class="tab-row py-4 dased-border">
                               <div class="container">
                                 <div class="row">
                                   <div class="col col-md-4 flight-detail-item">
                                     <img src="./images/emirates.png" alt="">
                                     <div>
-                                      <span class="fw-bold flight-detail-item-title">Emirates</span><br>
+                                      <span class="flight-detail-item-title">Emirates</span><br>
                                       <span class="flight-detail-item-subtitle">Economy</span><br>
                                       <span class="flight-detail-item-subtitle">RDM:M</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Sat, 19
@@ -922,7 +927,7 @@
                                   <div class="col col-md-4 flight-detail-item">
 
                                     <div>
-                                      <span class="fw-bold flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class="flight-detail-item-title">09:55-13:25</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">DHAKA -
                                         NEW-YORK</span><br>
@@ -935,7 +940,7 @@
 
                                     <div>
 
-                                      <span class="fw-bold flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-title">Duration</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
                                       <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
                                       <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
@@ -966,6 +971,29 @@
 
                             </div>
                             <!-- tab content icon sections ends  -->
+                          </div>
+                          <div class="tab-pane fade" id="home2" role="tabpanel" aria-labelledby="home2-tab">
+                            <div class=" custom-home2-tab border-bottom border-dark py-3 mt-2">
+                              <div class="div1">Pax Type</div>
+                              <div class="div2">Base Fare</div>
+                              <div class="div3">Tax</div>
+                              <div class="div4">Other</div>
+                              <div class="div5">Discount</div>
+                              <div class="div6">AIT & VAT</div>
+                              <div class="div7">Pax Count</div>
+                            </div>
+
+                            <div class="custom-home2-tab py-3 mt-2">
+
+                              <div class="div1">Adult</div>
+                              <div class="div2">122514</div>
+                              <div class="div3">23654</div>
+                              <div class="div4">0</div>
+                              <div class="div5">+5648</div>
+                              <div class="div6">496</div>
+                              <div class="div7">125364</div>
+
+                            </div>
                           </div>
                           <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                           <div class="row border-bottom border-dark py-3 mt-2">

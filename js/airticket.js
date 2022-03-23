@@ -103,20 +103,20 @@ const multicity = $(".muticity");
 
 // button Click behaviour
 oneway.click(() => {
-  oneway.css("background-color", "#3751ff");
-  roundtrip.css("background-color", "#f0f0f0");
-  multicity.css("background-color", "#f0f0f0");
+  oneway.toggleClass("oneway-clicked");
+  roundtrip.removeClass("roundtrip-clicked");
+  multicity.removeClass("muticity-clicked");
 });
 
 roundtrip.click(() => {
-  oneway.css("background-color", "#f0f0f0");
-  roundtrip.css("background-color", "#3751ff");
-  multicity.css("background-color", "#f0f0f0");
+  roundtrip.toggleClass("roundtrip-clicked");
+  oneway.removeClass("oneway-clicked");
+  multicity.removeClass("muticity-clicked");
 });
 multicity.click(() => {
-  oneway.css("background-color", "#f0f0f0");
-  roundtrip.css("background-color", "#f0f0f0");
-  multicity.css("background-color", "#3751ff");
+  multicity.toggleClass("muticity-clicked");
+  roundtrip.removeClass("roundtrip-clicked");
+  oneway.removeClass("oneway-clicked");
 });
 
 //swap button starts
