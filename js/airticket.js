@@ -1,89 +1,3 @@
-const inqueryBtn = document.getElementById("inquery-btn");
-const inqueryLinksDiv = document.getElementById("inner-inquery-links");
-
-inqueryBtn.addEventListener("click", function () {
-  inqueryLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("inquery-arrow").classList.toggle("nav-arrow-change");
-});
-
-const quationBtn = document.getElementById("quation-btn");
-const quationLinksDiv = document.getElementById("inner-quation-links");
-
-quationBtn.addEventListener("click", function () {
-  quationLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("quation-arrow").classList.toggle("nav-arrow-change");
-});
-
-const invoiceBtn = document.getElementById("invoice-btn");
-const invoiceLinksDiv = document.getElementById("inner-invoice-links");
-
-invoiceBtn.addEventListener("click", function () {
-  invoiceLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("invoice-arrow").classList.toggle("nav-arrow-change");
-});
-
-const expenseBtn = document.getElementById("expense-btn");
-const expenseLinksDiv = document.getElementById("inner-expense-links");
-
-expenseBtn.addEventListener("click", function () {
-  expenseLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("expense-arrow").classList.toggle("nav-arrow-change");
-});
-
-const reportBtn = document.getElementById("report-btn");
-const reportLinksDiv = document.getElementById("inner-report-links");
-
-reportBtn.addEventListener("click", function () {
-  reportLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("report-arrow").classList.toggle("nav-arrow-change");
-});
-
-const logBtn = document.getElementById("log-btn");
-const logLinksDiv = document.getElementById("inner-log-links");
-
-logBtn.addEventListener("click", function () {
-  logLinksDiv.classList.toggle("inner-nav-active");
-  document.getElementById("log-arrow").classList.toggle("nav-arrow-change");
-});
-
-const journeyStartCon = document.getElementById("journey-start-con");
-const returnDateCon = document.getElementById("return-date-con");
-const journeyFromCon = document.getElementById("journey-from-con");
-const journeyToCon = document.getElementById("journey-to-con");
-
-function changeTripType(type) {
-  if (type == "oneway") {
-    returnDateCon.classList.add("d-none");
-    journeyStartCon.classList.remove("col-6");
-    journeyStartCon.classList.add("col-12");
-
-    journeyFromCon.classList.add("col-md-8");
-    journeyFromCon.classList.remove("col-md-7");
-
-    journeyToCon.classList.add("col-md-4");
-    journeyToCon.classList.remove("col-md-5");
-  } else {
-    returnDateCon.classList.remove("d-none");
-    journeyStartCon.classList.remove("col-12");
-    journeyStartCon.classList.add("col-6");
-
-    journeyFromCon.classList.remove("col-md-8");
-    journeyFromCon.classList.add("col-md-7");
-
-    journeyToCon.classList.remove("col-md-4");
-    journeyToCon.classList.add("col-md-5");
-  }
-}
-
-const journeyFrom = document.getElementById("journey-from-input");
-const journeyTo = document.getElementById("journey-to-input");
-
-function changeJourneyInputs() {
-  const tempValue2 = journeyFrom.value;
-  journeyFrom.value = journeyTo.value;
-  journeyTo.value = tempValue2;
-}
-
 // Mobile Nav
 const mobileMenuBtn = document.getElementById("mobile-menu");
 
@@ -97,28 +11,44 @@ mobileMenuBtn.addEventListener("click", function () {
 
 //search ticket section
 
-const oneway = $(".oneway");
-const roundtrip = $(".roundtrip");
-const multicity = $(".muticity");
+const oneway = $("#oneway");
+const roundtrip = $("#roundtrip");
+const multicity = $("#multicity");
+const returnDate = $(".return-on");
+const oneWayTripPacage = $("#flight-details-wrapper-one-way");
+const roundTripPacage = $("#flight-details-wrapper-round-trip");
 
-// button Click behaviour
-oneway.click(() => {
-  oneway.toggleClass("oneway-clicked");
-  roundtrip.removeClass("roundtrip-clicked");
-  multicity.removeClass("muticity-clicked");
-});
+// button Click behavior
 
-roundtrip.click(() => {
-  roundtrip.toggleClass("roundtrip-clicked");
-  oneway.removeClass("oneway-clicked");
-  multicity.removeClass("muticity-clicked");
-});
-multicity.click(() => {
-  multicity.toggleClass("muticity-clicked");
-  roundtrip.removeClass("roundtrip-clicked");
-  oneway.removeClass("oneway-clicked");
-});
-
+//show element depend on trorType
+function changeJournyType(type) {
+  if (type === "one-way") {
+    oneway.toggleClass("oneway");
+    roundtrip.removeClass("roundtrip-clicked");
+    multicity.removeClass("muticity-clicked");
+    returnDate.addClass("d-none");
+    //new functionality
+    oneWayTripPacage.removeClass("d-none");
+    roundTripPacage.addClass("d-none");
+  } else if (type === "round-trip") {
+    roundtrip.toggleClass("roundtrip-clicked");
+    oneway.toggleClass("oneway-clicked");
+    multicity.removeClass("muticity-clicked");
+    returnDate.removeClass("d-none");
+    //new functionality
+    oneWayTripPacage.addClass("d-none");
+    roundTripPacage.removeClass("d-none");
+  } else {
+    multicity.toggleClass("muticity-clicked");
+    roundtrip.removeClass("roundtrip-clicked");
+    oneway.toggleClass("oneway-clicked");
+    returnDate.removeClass("d-none");
+    //new functionality
+    oneWayTripPacage.removeClass("d-none");
+    roundTripPacage.addClass("d-none");
+  }
+  // console.log(type);
+}
 //swap button starts
 const visevarsabtn = $(".visevarsa");
 const fromval = $("#fromval").change();
@@ -136,11 +66,14 @@ $.datepicker.setDefaults({
   dateFormat: "dd MM DD",
 });
 
-$("#datepicker").val(currentDate);
+$("#datepicker1").val(currentDate);
 // set default value to datepicker ends
 // datepicker starts
 $(function () {
-  $("#datepicker").datepicker();
+  $("#datepicker1").datepicker();
+});
+$(function () {
+  $("#datepicker2").datepicker();
 });
 //datepicker ends
 

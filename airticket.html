@@ -360,77 +360,101 @@
       <!-- right side code for dashboard -->
 
       <!-- Search flight section start -->
-      <div class="search-wrapper">
-        <div class="button-wrapper">
+      <form method="post">
+        <div class="search-wrapper">
           <div class="button-group">
-            <div class="oneway">One Way</div>
-            <div class="roundtrip">Round trip</div>
-            <div class="muticity">Muti-city</div>
-          </div>
-        </div>
-        <div class="destination-wrapper">
-          <button class="visevarsa">
-            <img class="flight-icon" src="/images/visevarsa.svg" alt="visevarsa image">
-          </button>
-          <div class="from">
-            <p class="text-title">From</p>
-            <div class="from-text">
-              <img class="location-icon" src="/images/location-icon.svg" alt="">
-              <input class="from-input" list="datalistOptions" id="fromval" placeholder="Type to search...">
-              <datalist id="datalistOptions">
-                <option value="New York(NYC)">
-                <option value="Dhaka(DAC)">
-                <option value="Jessore (JSR)">
-                <option value="Chittagong(CGP)">
-                <option value="Saidpur(SPD)">
-              </datalist>
+            <div class="oneway">
+              <input type="radio" checked class="hidden" name="tripType" value="one-way" id="oneway"
+                onclick="changeJournyType('one-way')">
+              <label for="oneway">One Way</label>
+            </div>
 
+            <div class="roundtrip">
+              <input type="radio" class="hidden" name="tripType" value="round-trip" id="roundtrip"
+                onclick="changeJournyType('round-trip')">
+              <label for="roundtrip">Round Trip</label>
+            </div>
+
+            <div class="multicity">
+              <input type="radio" class="hidden" name="tripType" value="multicity" id="multicity"
+                onclick="changeJournyType('multicity')">
+              <label for="multicity">Multicity</label>
             </div>
           </div>
-          <div class="to">
-            <p class="text-title">To</p>
-            <div class="to-text">
-              <img class="location-icon" src="/images/location-icon.svg" alt="">
-              <input class="from-input" list="datalistOptions" id="toval" placeholder="Type to search...">
+          <div class="destination-wrapper">
 
-
+            <div class="from">
+              <button class="visevarsa">
+                <img class="flight-icon" src="/images/visevarsa.svg" alt="visevarsa image">
+              </button>
+              <p class="text-title">From</p>
+              <div class="from-text">
+                <img class="location-icon" src="/images/location-icon.svg" alt="">
+                <input class="from-input" list="datalistOptions" id="fromval" placeholder="Type to search...">
+                <datalist id="datalistOptions">
+                  <option value="New York(NYC)">
+                  <option value="Dhaka(DAC)">
+                  <option value="Jessore (JSR)">
+                  <option value="Chittagong(CGP)">
+                  <option value="Saidpur(SPD)">
+                </datalist>
+              </div>
             </div>
-          </div>
-          <div class="depart-on">
-            <img class="date-icon" src="/images/date-icon.svg" alt="date icon" class="date-icon">
+            <div class="to">
+              <p class="text-title">To</p>
+              <div class="to-text">
+                <img class="location-icon" src="/images/location-icon.svg" alt="">
+                <input class="from-input" list="datalistOptions" id="toval" placeholder="Type to search...">
+              </div>
+            </div>
+            <!-- depart on section starts -->
+            <div class="round-trip-wrapper">
+              <div class="depart-on">
+                <img class="date-icon" src="/images/date-icon.svg" alt="date icon" class="date-icon">
 
-            <div class="depart-text">
-              <p>Depart on</p>
-              <div>
-                <p><input type="text" name="depart-date" id="datepicker"></p>
+                <div class="depart-text">
+                  <p>Depart on</p>
+                  <div>
+                    <p><input type="text" name="depart-date" id="datepicker1" autocomplete="off"></p>
+                  </div>
+                </div>
+              </div>
+              <div class="return-on d-none">
+                <img class="date-icon" src="/images/date-icon.svg" alt="date icon" class="date-icon">
+
+                <div class="depart-text">
+                  <p>Return on</p>
+                  <div>
+                    <p><input type="text" name="depart-date" id="datepicker2" placeholder="Return Date"
+                        autocomplete="off"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- depart on section starts -->
+            <div class="cabin-class">
+              <div class="cabin-text">
+                <p>passanger & Cabin Class</p>
+                <p>1 person</p>
+                <p class="depart-span">Econnomy Class</p>
+              </div>
+              <!-- this div will open when cabin class will be clicked  -->
+              <div class="cabin-class-body">
+
               </div>
             </div>
           </div>
-
-          <div class="cabin-class">
-            <div class="cabin-text">
-              <p>passanger & Cabin Class</p>
-              <p>1 person</p>
-              <p class="depart-span">Econnomy Class</p>
-            </div>
-            <!-- when i click passanger and cabin section the this div will show starts  -->
-            <div class="cabin-class-collapse-wrapper d-none">
-
-            </div>
-            <!-- when i click passanger and cabin section the this div will show ends  -->
+          <div class="search-box">
+            <img src="/images/flight-icon.svg" alt="search icon" class="flight-icon">
+            <p><input type="submit" value="Search Flight"></p>
           </div>
         </div>
-        <div class="search-box">
-          <img src="/images/flight-icon.svg" alt="search icon" class="flight-icon">
-          <p>Search Flight</p>
-        </div>
-      </div>
 
+        <!-- add city icon  -->
 
+      </form>
       <!-- Search flight section end  -->
-
       <!-- Available tickets depend on date starts -->
-
       <!-- slider starts here -->
 
       <div class="available-ticket-wrapper  ">
@@ -543,6 +567,7 @@
       </div>
       <!-- slider stops  -->
 
+      <!-- pacage genaretor start here -->
 
       <!-- Available tickets depend on date end -->
 
@@ -706,12 +731,16 @@
       <!-- available flights slider stops  -->
       <!-- available flights and prices end -->
 
+      <!-- when round-trip button will be clicked this div will show starts -->
+
+      <!-- when round-trip button will be clicked this div will show ends -->
+
       <!-- flights results section -->
       <div class="container">
         <span class="ms-2 fw-bold fs-5">345 flight results, 5 Unique Airlines</span>
         <div class="alert alert-danger custom-alert shadow" role="alert">
           <img src="./images/exclamation.svg" alt="">
-          Important: This destination may have COVID-19 travel restriction in place, including specific restriction for
+          *Important: This destination may have COVID-19 travel restriction in place, including specific restriction for
           loading. Check any nation,local and health advisories for this destination before you book.
         </div>
       </div>
@@ -741,7 +770,7 @@
       <!-- Button group section ends  -->
 
       <!-- Flight details and Price details section starts -->
-      <div class=" mt-5 shadow mb-5 py-3 flight-details-wrapper">
+      <div class=" mt-5 shadow mb-5 py-3 flight-details-wrapper" id="flight-details-wrapper-one-way">
         <div class="ms-5">
           <span class="fs-3 fw-normal">Emirates Airlines</span>
         </div>
@@ -860,10 +889,13 @@
                           </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
+                          <!-- Flight Details section content Starts  -->
                           <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <div class="w-100 fw-bold my-5 d-flex justify-content-center text-primary fw-bold fs-5 ">
+                            <div class=" w-100 fw-bold my-5 d-flex justify-content-center text-primary fw-bold fs-5"
+                              id=" custom-home-tab-title">
                               <span class="home-tab-title">DAC-JFK</span>
                             </div>
+
                             <div class="tab-row py-3">
                               <div class="container">
                                 <div class="row">
@@ -902,13 +934,13 @@
                                   </div>
                                 </div>
                               </div>
+                              <!-- transit time-section starts -->
+                              <div class="transit-section">
+                                <span>Transit Time:08 Hour</span>
+                              </div>
+                              <!-- transit time-section ends -->
+                            </div>
 
-                            </div>
-                            <!-- transit time-section starts -->
-                            <div class="transit-section">
-                              <span>Transit Time:08 Hour</span>
-                            </div>
-                            <!-- transit time-section ends -->
                             <div class="tab-row py-4 dased-border">
                               <div class="container">
                                 <div class="row">
@@ -972,201 +1004,213 @@
                             </div>
                             <!-- tab content icon sections ends  -->
                           </div>
+                          <!-- Flight Details section content Ends  -->
+                          <!-- Fare Summary section content starts  -->
                           <div class="tab-pane fade" id="home2" role="tabpanel" aria-labelledby="home2-tab">
                             <div class=" custom-home2-tab border-bottom border-dark py-3 mt-2">
-                              <div class="div1">Pax Type</div>
-                              <div class="div2">Base Fare</div>
-                              <div class="div3">Tax</div>
-                              <div class="div4">Other</div>
-                              <div class="div5">Discount</div>
-                              <div class="div6">AIT & VAT</div>
-                              <div class="div7">Pax Count</div>
+                              <div class="div1 text-secondary">Pax Type</div>
+                              <div class="div2 text-secondary">Base Fare</div>
+                              <div class="div3 text-secondary">Tax</div>
+                              <div class="div4 text-secondary">Other</div>
+                              <div class="div5 text-secondary">Discount</div>
+                              <div class="div6 text-secondary">AIT & VAT</div>
+                              <div class="div7 text-primary">Pax Count</div>
                             </div>
 
                             <div class="custom-home2-tab py-3 mt-2">
+                              <div class="div1 text-secondary">Adult</div>
+                              <div class="div2 text-secondary">122514</div>
+                              <div class="div3 text-secondary">23654</div>
+                              <div class="div4 text-secondary">0</div>
+                              <div class="div5 text-secondary">+5648</div>
+                              <div class="div6 text-secondary">496</div>
+                              <div class="div7 text-primary">125364</div>
+                            </div>
+                          </div>
+                          <!-- Fare Summary section content ends  -->
 
-                              <div class="div1">Adult</div>
-                              <div class="div2">122514</div>
-                              <div class="div3">23654</div>
-                              <div class="div4">0</div>
-                              <div class="div5">+5648</div>
-                              <div class="div6">496</div>
-                              <div class="div7">125364</div>
+                          <!-- Discount & Gross Section Content Starts  -->
+                          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row custom-profile-tab border-bottom">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Profit Amount</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">
+                                Comission
+                              </div>
+                              <div class="col col-md-4 text-secondary">
+                                Invoice Amount
+                              </div>
+                            </div>
+                            <div class="row custom-profile-tab border-bottom">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">1256345</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">7%</div>
+                              <div class="col col-md-4 text-secondary">
+                                496125648
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Discount & Gross Section Content ends  -->
 
+                          <!-- Cancellation Section starts here  -->
+                          <div class="custom-tab tab-pane fade" id="contact" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
                             </div>
-                          </div>
-                          <!-- <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                          <div class="row border-bottom border-dark py-3 mt-2">
-                            <div class="col col-md-4 text-secondary">
-                              <span class="ms-2">Profit Ammount</span>
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">0 hours to 72 hours</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
                             </div>
-                            <div class="col col-md-4 text-secondary">
-                              Comission
-                            </div>
-                            <div class="col col-md-4 text-secondary">
-                              Invoice Ammount
-                            </div>
-                          </div>
 
-                          <div class="row border-bottom border-dark py-3 mt-2">
-                            <div class="col col-md-4 text-secondary">
-                              <span class="ms-2">121893728</span>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">72 hours to 365 days</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
                             </div>
-                            <div class="col col-md-4 text-secondary">7%</div>
-                            <div class="col col-md-4 text-secondary">
-                              387238462
-                            </div>
-                          </div>
-                        </div> -->
-                          <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                          <div class="row mt-3 pb-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span class="text-secondary">Time Frame</span>
-                              <br>
-                              <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
-                            </div>
-                            <div class="col col-md-4">
-                              <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
-                              <br>
-                              <span class="text-secondary fs-6">(Per Passenger)</span>
-                            </div>
-                          </div>
-                          <div class="row py-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">0 hours to 72 hours</span>
-                              <br>
-                            </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
-                            </div>
-                          </div>
 
-                          <div class="row py-3">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">72 hours to 365 days</span>
-                              <br>
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
                             </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">All Flight Departure</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+                            <div class="alert alert-danger custom-alert shadow" role="alert">
+                              <img src="./images/exclamation.svg" alt="">
+                              *Important: This airline fee is indicative.Flyhub does not guarantee the accuracy of this
+                              information.All fees mentioned are per passenger.
                             </div>
                           </div>
+                          <!-- Cancellation Section ends here  -->
+                          <!-- Data Change Section Starts Here.  -->
 
-                          <div class="row mt-4 pb-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span class="text-secondary">Time Frame</span>
-                              <br>
-                              <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                          <div class=" custom-tab tab-pane fade" id="Data" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row mt-3 custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
                             </div>
-                            <div class="col col-md-4">
-                              <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
-                              <br>
-                              <span class="text-secondary fs-6">(Per Passenger)</span>
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">0 hours to 72 hours</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
                             </div>
-                          </div>
-                          <div class="row py-3">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">All Flight Departure</span>
-                              <br>
-                            </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
-                            </div>
-                          </div>
-                          <div class="border border-danger rounded-3 p-2 mt-3" style="background-color: rgb(245, 210, 210)">
-                            <span class="text-secondary fs-6">
-                              *Important: The airline fee is indiactive.Flyhub
-                              does not gurrentee the accuray of this
-                              information.All fees mentioned are per passenger
-                            </span>
-                          </div>
-                        </div> -->
-                          <!-- <div class="tab-pane fade" id="Data" role="tabpanel" aria-labelledby="contact-tab">
-                          <div class="row mt-3 pb-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span class="text-secondary">Time Frame</span>
-                              <br>
-                              <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
-                            </div>
-                            <div class="col col-md-4">
-                              <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
-                              <br>
-                              <span class="text-secondary fs-6">(Per Passenger)</span>
-                            </div>
-                          </div>
-                          <div class="row py-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">0 hours to 72 hours</span>
-                              <br>
-                            </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
-                            </div>
-                          </div>
 
-                          <div class="row py-3">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">72 hours to 365 days</span>
-                              <br>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">72 hours to 365 days</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
                             </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
-                            </div>
-                          </div>
 
-                          <div class="row mt-4 pb-3" style="border-bottom: 1px dashed gray">
-                            <div class="col col-md-6 ms-3">
-                              <span class="text-secondary">Time Frame</span>
-                              <br>
-                              <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                            <div class="row mt-4 pb-3" style="border-bottom: 1px dashed gray">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
                             </div>
-                            <div class="col col-md-4">
-                              <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
-                              <br>
-                              <span class="text-secondary fs-6">(Per Passenger)</span>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">All Flight Departure</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
                             </div>
-                          </div>
-                          <div class="row py-3">
-                            <div class="col col-md-6 ms-3">
-                              <span style="color: rgb(204, 200, 200)">All Flight Departure</span>
-                              <br>
-                            </div>
-                            <div class="col col-md-4">
-                              <span style="color: rgb(204, 200, 200)">Adult : 20400 + 3000</span>
-                              <br>
-                            </div>
-                          </div>
-                          <div class="border border-danger rounded-3 p-2 mt-3" style="background-color: rgb(245, 210, 210)">
-                            <span class="text-secondary fs-6">
-                              *Important: The airline fee is indiactive.Flyhub
-                              does not gurrentee the accuray of this
-                              information.All fees mentioned are per passenger
-                            </span>
-                          </div>
-                        </div> -->
-                          <!-- <div class="tab-pane fade" id="Baggage" role="tabpanel" aria-labelledby="contact-tab">
-                          <div class="row border-bottom border-dark py-3 mt-2">
-                            <div class="col col-md-4 text-secondary">
-                              <span class="ms-2">Flight</span>
-                            </div>
-                            <div class="col col-md-4 text-secondary">Cabin</div>
-                            <div class="col col-md-4 text-secondary">
-                              Check-In
+                            <div class="alert alert-danger custom-alert shadow" role="alert">
+                              <img src="./images/exclamation.svg" alt="">
+                              *Important: This airline fee is indicative.Flyhub does not guarantee the accuracy of this
+                              information.All fees mentioned are per passenger.
                             </div>
                           </div>
+                          <!-- Data Change Section Ends Here.  -->
+                          <!-- Baggage section Starts here  -->
 
-                          <div class="row border-bottom border-dark py-3 mt-2">
-                            <div class="col col-md-4 text-secondary">
-                              <span class="ms-2">Dac-Jfk</span>
+                          <div class=" custom-tab tab-pane fade" id="Baggage" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row border-bottom border-dark py-3 mt-2">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Flight</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">Cabin</div>
+                              <div class="col col-md-4 text-secondary">
+                                Check-In
+                              </div>
                             </div>
-                            <div class="col col-md-4 text-secondary">10 kg</div>
-                            <div class="col col-md-4 text-secondary">2</div>
+
+                            <div class="row border-bottom border-dark py-3 mt-2">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Dac-Jfk</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">10 kg</div>
+                              <div class="col col-md-4 text-secondary">2</div>
+                            </div>
                           </div>
-                        </div> -->
+                          <!-- Baggage section Ends here  -->
+
                         </div>
                       </div>
                     </div>
@@ -1179,6 +1223,476 @@
         </div>
       </div>
       <!-- Flight details and Price details section ends -->
+
+      <!-- pacage genaretor start here -->
+
+
+      <!-- this section will be work when multicity button clicked  -->
+      <!-- pacage genaretor start here -->
+      <!-- Available tickets depend on date end -->
+      <!-- available flights and prices start -->
+      <!-- available flights slider starts here -->
+
+      <!-- when round-trip button will be clicked this div will show starts -->
+
+      <!-- when round-trip button will be clicked this div will show ends --
+      <!-- Flight details and Price details section starts -->
+      <div class=" mt-5 shadow mb-5 py-3 flight-details-wrapper d-none " id="flight-details-wrapper-round-trip">
+        <div class="ms-5">
+          <span class="fs-3 fw-normal">Emirates Airlines</span>
+        </div>
+        <div class="d-flex justify-content-between px-5 py-4">
+          <div class="d-flex w-30">
+            <div>
+              <img class="rounded-circle" src="images/emirates.png" alt="" width="50px">
+            </div>
+            <div class="ms-3">
+              <span class="fs-5 fw-bold">DAC,Dhaka</span> <br>
+              <span class="text-secondary">23:00AM Sat,19 mar,22</span>
+            </div>
+            <img class="arrow-12" src="./images/Arrow_12.svg" alt="arrow image">
+          </div>
+          <div class="ms-3">
+            <span class="fs-5 fw-bold">JFK,NEW YORK</span> <br>
+            <span class="text-secondary">23:00AM Sat,22 mar,22</span>
+          </div>
+          <div>
+            <span class="fs-10 text-secondary">43h 55m</span> <br>
+            <span class=" fs-10 text-secondary">1 stop</span>
+          </div>
+          <div>
+            <span class="fs-10 fw-bold">Client Price</span> <br>
+            <span class="fs-10 text-secondary">Agent Price</span>
+          </div>
+          <div>
+            <span class="fs-10  text-secondary">BDT 12,456225</span> <br>
+            <span class="fs-10  text-secondary">BDT, 12,456225</span>
+          </div>
+          <div>
+            <span class="fs-5 fw-bold">BDT 11,25469</span> <br>
+            <button class="btn btn-primary mt-2">Book Ticket</button>
+          </div>
+        </div>
+
+        <div class="mt-2">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <div class="w-100 row">
+
+                  <div class="col col-5 fs-5 d-flex justify-content-end align-items-center">
+                    <span class="d-block  me-5 fs-16 text-secondary">Economy</span>
+                    <img src="./images/dollersign.svg" alt="">
+                    <span class="d-block ms-2 text-danger"> Non Refundable</span>
+                  </div>
+                  <div class="col col-3 text-secondary d-flex justify-content-sart align-items-center fs-5">
+                    <img class="me-3" src="./images/wifi-img.svg" alt="">
+                    <img class="me-3" src="./images/tv-image.svg" alt="">
+                    <img class="me-3" src="./images/hexagone-img.svg" alt="">
+                    <img class="me-3" src="./images/plate-and-spoon.svg" alt="./images/drinks-img.svg">
+                    <img class="me-3" src="./images/drinks-img.svg" alt="">
+                  </div>
+                  <div class="col col-4 d-flex justify-content-end custom-focus">
+                    <a type="button" class="accordion collapsed custom-collapse-btn  w-50  " data-bs-toggle="collapse"
+                      data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+
+                      <div class="text-primary">Flight Details</div>
+                      <img src="./images/downarrow.svg" alt="downarrow images">
+                    </a>
+                  </div>
+                </div>
+              </h2>
+
+              <!-- accordion body starts -->
+              <div id="collapseOne" class=" accordion-collapse collapse" aria-labelledby="headingOne"
+                data-bs-parent="#accordionExample">
+                <div class="dased-border accordion-body">
+                  <div class="row">
+
+                    <div class="col col-md-12">
+                      <div class="mt-2 ">
+                        <ul class="nav nav-tabs " id="myTab" role="tablist">
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn active" id="home-tab" data-bs-toggle="tab"
+                              data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">
+                              Flight Details
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn " id="home2-tab" data-bs-toggle="tab"
+                              data-bs-target="#home2" type="button" role="tab" aria-controls="home2"
+                              aria-selected="true">
+                              Fare Summary
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn" id="profile-tab" data-bs-toggle="tab"
+                              data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                              aria-selected="false">
+                              Discount &amp; Gross
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn" id="contact-tab" data-bs-toggle="tab"
+                              data-bs-target="#contact" type="button" role="tab" aria-controls="contact"
+                              aria-selected="false">
+                              Cancellation
+                            </button>
+                          </li>
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn" id="contact-tab" data-bs-toggle="tab"
+                              data-bs-target="#Data" type="button" role="tab" aria-controls="Data"
+                              aria-selected="false">
+                              Data Change
+                            </button>
+                          </li>
+
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link tab-btn" id="contact-tab" data-bs-toggle="tab"
+                              data-bs-target="#Baggage" type="button" role="tab" aria-controls="Baggage"
+                              aria-selected="false">
+                              Baggage
+                            </button>
+                          </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                          <!-- Flight Details section content Starts  -->
+                          <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <!-- This div will show when roundtrip will be clicked -->
+                            <div class=" d-flex justify-content-center my-4" id="round-trip-button-group">
+                              <button type="button" class="btn btn-outline-secondary me-3">Dhaka → New York</button>
+                              <button type="button" class="btn btn-outline-secondary">New York → Dhaka</button>
+                            </div>
+
+                            <div class="tab-row py-3">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col col-md-4 flight-detail-item">
+                                    <img src="./images/emirates.png" alt="">
+                                    <div>
+                                      <span class=" flight-detail-item-title">Emirates</span><br>
+                                      <span class=" flight-detail-item-subtitle">Economy</span><br>
+                                      <span class="flight-detail-item-subtitle">RDM:M</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat, 19
+                                        mar,'22</span><br>
+                                      <span class="flight-detail-item-subtitle">23:00</span><br>
+                                    </div>
+
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
+
+                                    <div>
+                                      <span class=" flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">DHAKA - DUBAI</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">BOING 777-300ER |
+                                        EK</span><br>
+                                    </div>
+
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
+
+                                    <div>
+
+                                      <span class="flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
+                                      <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- transit time-section starts -->
+                              <div class="transit-section">
+                                <span>Transit Time:08 Hour</span>
+                              </div>
+                              <!-- transit time-section ends -->
+                            </div>
+
+                            <div class="tab-row py-4 dased-border">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col col-md-4 flight-detail-item">
+                                    <img src="./images/emirates.png" alt="">
+                                    <div>
+                                      <span class="flight-detail-item-title">Emirates</span><br>
+                                      <span class="flight-detail-item-subtitle">Economy</span><br>
+                                      <span class="flight-detail-item-subtitle">RDM:M</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat, 19
+                                        mar,'22</span><br>
+                                      <span class="flight-detail-item-subtitle">23:00</span><br>
+
+                                    </div>
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
+
+                                    <div>
+                                      <span class="flight-detail-item-title">09:55-13:25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Sat,19 mar, 22</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">DHAKA -
+                                        NEW-YORK</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">BOING 777-300ER |
+                                        EK</span><br>
+                                    </div>
+
+                                  </div>
+                                  <div class="col col-md-4 flight-detail-item">
+
+                                    <div>
+
+                                      <span class="flight-detail-item-title">Duration</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">05h 25min</span><br>
+                                      <span class="flight-detail-item-subtitle text-danger fw-italic">EK25</span><br>
+                                      <span class="flight-detail-item-subtitle text-secondary">Class:M</span><br>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- tab content icon sections starts  -->
+                            <div class="tab-content-icon-wrapper">
+
+                              <div class="tab-content-icon-item">
+                                <img src="./images/seat-pitch.svg" alt="">
+                                <span>81 cm Seat pitch</span>
+                              </div>
+                              <div class="tab-content-icon-item">
+                                <img src="./images/airplane.svg" alt="">
+                                <span>777(widebody)</span>
+                              </div>
+                              <div class="tab-content-icon-item">
+                                <img src="./images/wifi-img.svg" alt="">
+                                <span>Basic web browsing free</span>
+                              </div>
+                              <div class="tab-content-icon-item">
+                                <img src="./images/hexagone-img.svg" alt="">
+                                <span>Power & USB OUtlets</span>
+                              </div>
+
+                            </div>
+                            <!-- tab content icon sections ends  -->
+                          </div>
+                          <!-- Flight Details section content Ends  -->
+                          <!-- Fare Summary section content starts  -->
+                          <div class="tab-pane fade" id="home2" role="tabpanel" aria-labelledby="home2-tab">
+                            <div class=" custom-home2-tab border-bottom border-dark py-3 mt-2">
+                              <div class="div1 text-secondary">Pax Type</div>
+                              <div class="div2 text-secondary">Base Fare</div>
+                              <div class="div3 text-secondary">Tax</div>
+                              <div class="div4 text-secondary">Other</div>
+                              <div class="div5 text-secondary">Discount</div>
+                              <div class="div6 text-secondary">AIT & VAT</div>
+                              <div class="div7 text-primary">Pax Count</div>
+                            </div>
+
+                            <div class="custom-home2-tab py-3 mt-2">
+                              <div class="div1 text-secondary">Adult</div>
+                              <div class="div2 text-secondary">122514</div>
+                              <div class="div3 text-secondary">23654</div>
+                              <div class="div4 text-secondary">0</div>
+                              <div class="div5 text-secondary">+5648</div>
+                              <div class="div6 text-secondary">496</div>
+                              <div class="div7 text-primary">125364</div>
+                            </div>
+                          </div>
+                          <!-- Fare Summary section content ends  -->
+
+                          <!-- Discount & Gross Section Content Starts  -->
+                          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row custom-profile-tab border-bottom">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Profit Amount</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">
+                                Comission
+                              </div>
+                              <div class="col col-md-4 text-secondary">
+                                Invoice Amount
+                              </div>
+                            </div>
+                            <div class="row custom-profile-tab border-bottom">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">1256345</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">7%</div>
+                              <div class="col col-md-4 text-secondary">
+                                496125648
+                              </div>
+                            </div>
+                          </div>
+                          <!-- Discount & Gross Section Content ends  -->
+
+                          <!-- Cancellation Section starts here  -->
+                          <div class="custom-tab tab-pane fade" id="contact" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
+                            </div>
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">0 hours to 72 hours</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">72 hours to 365 days</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
+                            </div>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">All Flight Departure</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+                            <div class="alert alert-danger custom-alert shadow" role="alert">
+                              <img src="./images/exclamation.svg" alt="">
+                              *Important: This airline fee is indicative.Flyhub does not guarantee the accuracy of this
+                              information.All fees mentioned are per passenger.
+                            </div>
+                          </div>
+                          <!-- Cancellation Section ends here  -->
+                          <!-- Data Change Section Starts Here.  -->
+
+                          <div class=" custom-tab tab-pane fade" id="Data" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row mt-3 custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
+                            </div>
+                            <div class="row custom-tab-row">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">0 hours to 72 hours</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">72 hours to 365 days</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+
+                            <div class="row mt-4 pb-3" style="border-bottom: 1px dashed gray">
+                              <div class="col col-md-6 ms-3">
+                                <span class="text-secondary">Time Frame</span>
+                                <br>
+                                <span class="text-secondary fs-6">(From Scheduled flight Departure)</span>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="text-secondary">Airline Fee + Flyfarint Flight</span>
+                                <br>
+                                <span class="text-secondary fs-6">(Per Passenger)</span>
+                              </div>
+                            </div>
+                            <div class="row py-3">
+                              <div class="col col-md-6 ms-3">
+                                <span class="custom-color">All Flight Departure</span>
+                                <br>
+                              </div>
+                              <div class="col col-md-4">
+                                <span class="custom-color">Adult : 20400 + 3000</span>
+                                <br>
+                              </div>
+                            </div>
+                            <div class="alert alert-danger custom-alert shadow" role="alert">
+                              <img src="./images/exclamation.svg" alt="">
+                              *Important: This airline fee is indicative.Flyhub does not guarantee the accuracy of this
+                              information.All fees mentioned are per passenger.
+                            </div>
+                          </div>
+                          <!-- Data Change Section Ends Here.  -->
+                          <!-- Baggage section Starts here  -->
+
+                          <div class=" custom-tab tab-pane fade" id="Baggage" role="tabpanel"
+                            aria-labelledby="contact-tab">
+                            <div class="row border-bottom border-dark py-3 mt-2">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Flight</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">Cabin</div>
+                              <div class="col col-md-4 text-secondary">
+                                Check-In
+                              </div>
+                            </div>
+
+                            <div class="row border-bottom border-dark py-3 mt-2">
+                              <div class="col col-md-4 text-secondary">
+                                <span class="ms-2">Dac-Jfk</span>
+                              </div>
+                              <div class="col col-md-4 text-secondary">10 kg</div>
+                              <div class="col col-md-4 text-secondary">2</div>
+                            </div>
+                          </div>
+                          <!-- Baggage section Ends here  -->
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- accordion body ends -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Flight details and Price details section ends -->
+
+      <!-- pacage genaretor start here -->
 
       <!-- Pagination section starts  -->
       <nav aria-label="Page navigation example">

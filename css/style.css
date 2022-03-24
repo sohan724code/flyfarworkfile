@@ -152,70 +152,82 @@ main {
   align-items: center;
 }
 
+input[type="submit"] {
+  border: none;
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* flight search button section starts here  */
 .button-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: 50px;
   width: 700px;
-  border-radius: 40px;
-  margin-bottom: 20px;
 }
 .button-group > div {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 30px;
-  height: 40px;
-  width: 95%;
+  height: 100%;
+  width: 100%;
 }
-.oneway {
-  border-radius: 40px 0 0 40px;
-  background-color: #fff;
-  color: black;
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
 }
-.oneway-clicked {
-  border-radius: 40px 0 0 40px;
+
+input[type="radio"] + label {
+  background-color: #f8f8f8;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[id="oneway"] + label {
+  border-radius: 50px 0 0 50px;
+}
+input[id="multicity"] + label {
+  border-radius: 0 50px 50px 0;
+}
+input[type="radio"]:checked + label {
+  color: #fff;
   background-color: #0d6efd;
-  color: white;
 }
-.roundtrip {
-  background-color: #fff;
-  color: black;
-}
-.roundtrip-clicked {
-  background-color: #0d6efd;
-  color: white;
-}
-.muticity {
-  border-radius: 0 40px 40px 0;
-  background-color: #fff;
-  color: black;
-}
-.muticity-clicked {
-  border-radius: 0 40px 40px 0;
-  background-color: #0d6efd;
-  color: white;
-}
+/* flight search button section ends here  */
+/* one way destination section starts here  */
 
 .destination-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #333; */
-  width: 90%;
+  width: 100%;
   height: 100px;
   position: relative;
 }
 
-.destination-wrapper > div {
-  background-color: white;
+.from {
+  padding-left: 10px;
+  height: 65px;
+  width: 17%;
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+  margin-right: 10px;
+  padding-left: 15px;
+  padding-top: 5px;
+  cursor: pointer;
+  position: relative;
 }
-.from,
 .to {
   padding-left: 10px;
   height: 65px;
-  width: 25%;
+  width: 17%;
   border: 1px solid #0d6efd;
   border-radius: 5px;
   color: #999;
@@ -242,15 +254,70 @@ main {
 }
 input {
   outline: none;
+  border: none;
 }
-.depart-on,
+.depart-on {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.depart-on input {
+  width: 90%;
+  text-align: left;
+  background-color: transparent;
+}
+
+.return-on {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  color: #999;
+  font-size: 12px;
+  line-height: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.return-on input {
+  width: 90%;
+  text-align: left;
+  background-color: transparent;
+}
+
+/* one way destination section starts here  */
+/* return section container starts */
+.round-trip-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  border: 1px solid #0d6efd;
+  border-radius: 5px;
+  margin-right: 10px;
+  height: 65px;
+}
+.round-trip-wrapper > :nth-child(2) {
+  border-left: 1px solid #0d6efd;
+}
+/* return section container ends */
 .cabin-class {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 10px;
   height: 65px;
-  width: 25%;
+  width: 17%;
   border: 1px solid #0d6efd;
   border-radius: 5px;
   color: #999;
@@ -274,8 +341,8 @@ input {
   background-color: #0d6efd;
   border-radius: 50%;
   position: absolute;
-  top: 28%;
-  left: 23%;
+  top: 20%;
+  left: 93%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -648,11 +715,7 @@ input {
   display: flex;
 }
 .custom-alert img {
-  width: 2%;
-  margin-right: 8px;
-  transform: rotate(178deg);
-  filter: invert(60%) sepia(17%) saturate(6004%) hue-rotate(320deg)
-    brightness(107%) contrast(123%);
+  margin-right: 10px;
 }
 
 /* flights results section ends  */
@@ -681,6 +744,10 @@ input {
 .arrow-12 {
   width: 25%;
   margin-left: 5%;
+}
+
+.custom-class {
+  display: none !important;
 }
 .flight-details-wrapper {
   border: 10px 10px 0 0;
@@ -737,13 +804,15 @@ input {
 /* Flight details and Price details section starts */
 .nav {
   border: none;
-  width: 70% !important;
+  width: 100% !important;
+  padding: 0 20px;
   margin: 0 auto;
+  justify-content: center;
 }
 .tab-content-icon-wrapper {
   display: grid;
   grid-template-columns: 18% 18% 25% 25%;
-  width: 80%;
+  width: 85%;
   height: 40px;
   margin: 10px auto;
 }
@@ -756,14 +825,43 @@ input {
 .custom-home2-tab {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
 }
 /* Fare summary section css ends */
-.custom-home2-tab {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
+
+/* Gross & Gross section css starts  */
+.custom-profile-tab {
+  padding-top: 1rem !important;
+  padding-bottom: 0.5rem !important;
+  margin-top: 0.5rem !important;
+  width: 85%;
+  margin: 0 auto;
 }
+/* Gross & Gross section css ends  */
+
+/* Cancellation section  and Data Change Section CSS starts here  */
+.custom-tab {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.custom-tab-row {
+  border-bottom: 1px dashed gray;
+  padding-bottom: 1rem !important;
+  margin-top: 1rem !important;
+}
+
+.tab-row {
+  position: relative;
+}
+
+/* custom color cancellation and data change section  */
+.custom-color {
+  color: rgb(204, 200, 200);
+}
+
+/* Cancellation section  and Data Change Section CSS starts here  */
 
 /* Flight details and Price details section ends */
 
@@ -772,14 +870,15 @@ input {
   position: absolute;
   width: 225px;
   height: 30px;
-  left: 750px;
-  top: 1684px;
+  left: 35%;
+  top: 90%;
   background: #e9e9e9;
   border-radius: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #3751ff;
+  z-index: 9999;
 }
 /* trangit time section  ends */
 
@@ -1323,6 +1422,20 @@ input[type="date"] {
 .nav-item {
   border: none !important;
   border-bottom: 1px solid #999 !important;
+  width: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+.nav-item:first-child {
+  width: 137px;
+}
+.nav-item:last-child {
+  width: 105px;
 }
 
 .important {
