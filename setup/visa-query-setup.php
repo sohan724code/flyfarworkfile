@@ -16,64 +16,137 @@
             all: revert;
         }
 
-        .ff-text-color {
+        .ffl-text-color {
             color: #3751FF
         }
 
-        .ff-border {
+        .ffl-border {
             border-style: solid;
             border-width: 1px;
             border-color: #3751FF;
+            border-radius: 5px;
+        }
+
+        .ffl-button {
+            font-size: 18px;
+            color: white;
+            border: 1px solid #3751FF;
+            border-radius: 30px;
+            background-color: #3751FF;
+        }
+
+        textarea:hover,
+        input:hover,
+        textarea:active,
+        input:active,
+        textarea:focus,
+        input:focus,
+        button:focus,
+        button:active,
+        button:hover,
+        label:focus,
+        .btn:active,
+        .btn.active {
+            outline: 0px !important;
+            -webkit-appearance: none;
+            box-shadow: none !important;
         }
     </style>
 </head>
 
 <body>
-
     <script>
+        // Sweet Alert
         function success() {
             swal({
                 title: "Success!",
                 icon: "success",
-                text: "Passport Added Successfully!",
+                text: "Visa Information Added Successfully!",
                 type: "success",
                 confirmButtonText: "Cool"
             });
         }
+
+        // total processing time 
+        function totalProcessingTime() {
+            const embassyProcessingTime = parseInt(document.getElementById("embassyProcessingTime").value);
+            const officeProcessingTime = parseInt(document.getElementById("officeProcessingTime").value);
+            document.getElementById("totalProcessingTime").innerHTML = embassyProcessingTime + officeProcessingTime;
+        }
+
+        // total cost 
+        function totalCost() {
+            const embassyFee = parseInt(document.getElementById("embassy-fee").value);
+            const embassyAgentFee = parseInt(document.getElementById("embassy-agent-fee").value);
+            const othersCost = parseInt(document.getElementById("others-cost").value);
+            const serviceCharge = parseInt(document.getElementById("service-charge").value);
+
+            document.getElementById("total-cost").innerHTML = embassyFee + embassyAgentFee + othersCost + serviceCharge;
+
+        }
     </script>
+
     <?php
+
     include "./../session.php";
 
     // variables with empty values
 
-    $passport = $mobile = $pax = $birth_place = $qt = $name = "";
-    $error = "";
-
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-        if (empty($_POST["passport"]) || empty($_POST["name"]) || empty($_POST["mobile"]) || empty($_POST["pax"]) || empty($_POST["birth_place"]) || empty($_POST["qt"])) {
-            $error = "fill up all the fields ";
+        $error = "";
+        $country = $_POST["country"];
+        $visa_type = $_POST["visaType"];
+        $entry_type = $_POST['entryType'];
+        $visa_document_type = $_POST['visaDocumentType'];
+        $visa_duration = $_POST['visaDuration'];
+        $embassy_processing_time = $_POST['embassyProcessingTime'];
+        $office_processing_time = $_POST['officeProcessingTime'];
+        $processing_time_note = $_POST['processingTimeNote'];
+        $minimum_validity = $_POST['minimumValidity'];
+        $minimum_blank_page = $_POST['minimumBlankPage'];
+        $passport_requirement_details = $_POST['passportRequirementDetails'];
+        $national_ID_card = $_POST['nationalIDCard'];
+        $photo_unit = $_POST['photoUnit'];
+        $photo_width = $_POST['photoWidth'];
+        $photo_height = $_POST['photoHeight'];
+
+        $photo_requirement_details = $_POST['photoRequirementDetails'];
+        $utility_bill = $_POST['utilityBill'];
+        $asset_valuation = $_POST['assetValuation'];
+        $visa_application_submission_center = $_POST['visaApplicationSubmissionCenter'];
+        $google_map_link = $_POST['googleMapLink'];
+        $address = $_POST['address'];
+        $appointment_required = $_POST['appointmentRequired'];
+        $visa_information_source_link_1 = $_POST['visaInformationSourceLink1'];
+        $visa_information_source_link_2 = $_POST['visaInformationSourceLink2'];
+        $embassy_fee = $_POST['embassyFee'];
+        $embassy_agent_fee = $_POST['embassyAgentFee'];
+        $others_cost = $_POST['othersCost'];
+        $others_cost_details = $_POST['othersCostDetails'];
+        $service_charge = $_POST['serviceCharge'];
+        $professional_document_details = $_POST['professionalDocumentDetails'];
+        $other_document_details = $_POST['otherDocumentDetails'];
+        $general_information = $_POST['generalInformation'];
+        $period = $_POST['period'];
+        $minimum_balance = $_POST['minimum_balance'];
+        $bank_solvency = $_POST['bankSolvency'];
+        $bank_statement_details = $_POST['bankStatementDetails'];
+
+        $sql = "INSERT INTO `visa_query_setup`( `country`, `visa_type`, `entry_type`, `visa_document_type`, `visa_duration`, `embassy_processing_time`, `office_processing_time`, `processing_time_note`, `minimum_validity`, `minimum_blank_page`, `passport_requirement_details`, `national_ID_card`, `photo_unit`, `photo_width`, `photo_height`, `photo_requirement_details`, `utility_bill`, `asset_valuation`, `visa_application_submission_center`, `google_map_link`, `address`, `appointment_required`, `visa_information_source_link_1`, `visa_information_source_link_2`, `embassy_fee`, `embassy_agent_fee`, `others_cost`, `others_cost_details`, `service_charge`, `professional_document_details`, `other_document_details`, `general_information`, `period`, `minimum_balance`, `bank_solvency`, `bank_statement_details`) 
+        VALUES ('$country','$visa_type','$entry_type','$visa_document_type','$visa_duration','$embassy_processing_time','$office_processing_time', '$processing_time_note', '$minimum_validity','$minimum_blank_page','$passport_requirement_details','$national_ID_card','$photo_unit', '$photo_width', '$photo_height','$photo_requirement_details','$utility_bill','$asset_valuation','$visa_application_submission_center','$google_map_link','$address','$appointment_required','$visa_information_source_link_1','$visa_information_source_link_2','$embassy_fee','$embassy_agent_fee','$others_cost','$others_cost_details','$service_charge','$professional_document_details','$other_document_details','$general_information','$period','$minimum_balance','$bank_solvency','$bank_statement_details')";
+
+
+        if ($conn->query($sql) === TRUE) {
+            echo '<script>success();</script>';
         } else {
-            $passport = $_POST["passport"];
-            $name = $_POST["name"];
-            $mobile = $_POST["mobile"];
-            $pax = $_POST["pax"];
-            $birth_place = $_POST["birth_place"];
-            $qt = $_POST["qt"];
-        }
-
-        if ($error == "") {
-            $sql = 'INSERT INTO `passport`( `passNum`, `name`, `mobile`, `Pax`, `birthPlace`, `QT`) 
-        VALUES ("' . $_POST["passport"] . '", "' . $_POST["name"] . '", "' . $_POST["mobile"] . '", "' . $_POST["pax"] . '", "' . $_POST["birth_place"] . '", "' . $_POST["qt"] . '")';
-
-            if ($conn->query($sql) === TRUE) {
-                echo '<script>success();</script>';
-            } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
-            }
+            echo "Error: " . $sql . "<br>" . $conn->error;
         }
     }
     ?>
+
+
+
 
     <div class="page-container mb-5">
 
@@ -141,290 +214,516 @@
 
 
             <div class=" my-3">
-                <div class="row">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="row">
 
-                    <!-- left column -->
-                    <div class="container w-50 col">
-                        <h1 class="fs-5 ff-text-color"><u>Inquiry Country and Visa Type</u></h1>
+                        <!-- left column -->
+                        <div class="container w-50 col">
 
-                        <!-- input country name  -->
-                        <div class="row p-3">
-                            <label class="col">Country Name</label>
+                            <!-- Inquiry Country and Visa Type -->
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Inquiry Country and Visa Type</u></h1>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="India">India</option>
-                                    </select>
-                                </fieldset>
-                            </div>
+                                <!-- input country name  -->
+                                <div class="row p-3">
+                                    <label class="col">Country</label>
 
-                        </div>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">Select</legend>
+                                            <select name="country" class="border-0 w-100 form-select" id="countries">
+                                                <option value="Bangladesh">Bangladesh</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
 
-                        <!-- input visa type -->
-                        <div class="row p-3">
-                            <label class="col">Visa Type</label>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="Tourist Visa">Tourist Visa</option>
-                                    </select>
-                                </fieldset>
-                            </div>
+                                <!-- input visa type -->
+                                <div class="row p-3">
+                                    <label class="col">Visa Type</label>
 
-                        </div>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="visaType" class="border-0 w-100 form-select">
+                                                <option value="Tourist Visa">Tourist Visa</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
 
-                        <!-- input entry type -->
-                        <div class="row p-3">
-                            <label class="col">Entry Type</label>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="Tourist Visa">Multiple</option>
-                                    </select>
-                                </fieldset>
-                            </div>
+                                <!-- input entry type -->
+                                <div class="row p-3">
+                                    <label class="col">Entry Type</label>
 
-                        </div>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="entryType" class="border-0 w-100 form-select">
+                                                <option value="Multiple">Multiple</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
 
-                        <!-- input visa document type -->
-                        <div class="row p-3">
-                            <label class="col">Visa Document Type</label>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border mx-auto w-50">
-                                    <legend class="reset">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="Tourist Visa">Sticker Visa</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                        </div>
+                                <!-- input visa document type -->
+                                <div class="row p-3">
+                                    <label class="col">Visa Document Type</label>
 
-                        <!-- input visa duration type -->
-                        <div class="row p-3">
-                            <label class="col">Visa Duration</label>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border mx-auto w-50">
+                                            <legend class="reset">Select</legend>
+                                            <select name="visaDocumentType" class="border-0 w-100 form-select">
+                                                <option value="Sticker Visa">Sticker Visa</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="Tourist Visa">90</option>
-                                    </select>
-                                </fieldset>
-                            </div>
-                        </div>
+                                <!-- input visa duration type -->
+                                <div class="row p-3">
+                                    <label class="col">Visa Duration</label>
 
-
-                        <h1 class="fs-5 ff-text-color"><u>Processing Time</u></h1>
-
-                        <!-- input Embassy Processing Time -->
-                        <div class="row p-3">
-                            <label class="col">Embassy Processing Time</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Working Day</legend>
-                                    <input class="border-0 w-100">
-                                </fieldset>
-                            </div>
-                        </div>
-
-                        <!-- input Embassy Processing Time -->
-                        <div class="row p-3">
-                            <label class="col">Our Office Processing Time</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Working Day</legend>
-                                    <input class="border-0 w-100">
-                                </fieldset>
-                            </div>
-                        </div>
-
-                        <hr>
-
-                        <div class="row p-3">
-                            <label class="col">Total Processing Time</label>
-
-                            <div class="col">
-                                <div class="reset ff-border w-75 mx-auto row p-2">
-                                    <text class="reset f-6 col">Day</text>
-                                    <input name="country" class="border-0 w-75 col">
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Day</legend>
+                                            <input name="visaDuration" value="90" type="number" class="border-0 w-100" required>
+                                        </fieldset>
+                                    </div>
                                 </div>
                             </div>
 
-                        </div>
 
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Processing Time</u></h1>
 
-                        <h1 class="fs-5 ff-text-color"><u>Passport</u></h1>
+                                <!-- input Embassy Processing Time -->
+                                <div class="row p-3">
+                                    <label class="col">Embassy Processing Time</label>
 
-                        <!-- input Minimum Validity -->
-                        <div class="row p-3">
-                            <label class="col">Minimum Validity</label>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Working Day</legend>
+                                            <input type="number" id="embassyProcessingTime" value="40" onChange="totalProcessingTime()" class="border-0 w-100" name="embassyProcessingTime" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">month</legend>
-                                    <input class="border-0 w-100">
-                                </fieldset>
-                            </div>
-                        </div>
+                                <!-- input Embassy Processing Time -->
+                                <div class="row p-3">
+                                    <label class="col">Our Office Processing Time</label>
 
-                        <!-- input Embassy Processing Time -->
-                        <div class="row p-3">
-                            <label class="col">Minimum Blank Page</label>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Working Day</legend>
+                                            <input type="number" id="officeProcessingTime" value="5" onChange="totalProcessingTime()" name="officeProcessingTime" class="border-0 w-100" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">month</legend>
-                                    <input class="border-0 w-100">
-                                </fieldset>
-                            </div>
-                        </div>
+                                <hr>
 
+                                <div class="row p-3">
+                                    <label class="col">Total Processing Time</label>
 
-                    </div>
+                                    <div class="col">
+                                        <div class="reset ffl-border w-75 mx-auto row p-2">
+                                            <text class="reset f-6 col">Day</text>
+                                            <text id="totalProcessingTime" class="border-0 w-75 col">50</text>
+                                        </div>
+                                    </div>
 
-                    <!-- right column -->
-                    <div class="container w-50 col">
-                        <h1 class="fs-5 ff-text-color"><u>Cost Details</u></h1>
+                                    <div class="py-5">
+                                        <label>Processing Time Note</label>
+                                        <textarea rows="5" name="processingTimeNote" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+                                    </div>
 
-                        <!-- input Embassy Fee Fee  -->
-                        <div class="row p-3">
-                            <label class="col">Embassy Fee</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
-                            </div>
-
-                        </div>
-
-                        <!-- input Embassy Fee Fee  -->
-                        <div class="row p-3">
-                            <label class="col">Embassy Agent Fee</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
-                            </div>
-
-                        </div>
-
-                        <!-- input Embassy Agent Fee -->
-                        <div class="row p-3">
-                            <label class="col">Others Cost</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
-                            </div>
-
-                        </div>
-
-                        <!-- input Others Cost -->
-                        <div class="row p-3">
-                            <label class="col">Our Service Charge</label>
-
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
-                            </div>
-
-                        </div>
-
-                        <hr>
-
-                        <div class="row p-3">
-                            <label class="col">Total Cost</label>
-
-                            <div class="col">
-                                <div class="reset ff-border w-75 mx-auto row p-2">
-                                    <text class="reset f-6 col">BDT</text>
-                                    <input name="country" class="border-0 w-75 col">
                                 </div>
                             </div>
 
+
+                            <div class="my-5">
+
+                                <h1 class="fs-5 ffl-text-color"><u>Passport</u></h1>
+
+                                <!-- input Minimum Validity -->
+                                <div class="row p-3">
+                                    <label class="col">Minimum Validity</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">month</legend>
+                                            <input name="minimumValidity" type="number" class="border-0 w-100 text-center" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- input Minimum Blank Page -->
+                                <div class="row p-3">
+                                    <label class="col">Minimum Blank Page</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Page</legend>
+                                            <input name="minimumBlankPage" type="number" class="border-0 w-100 text-center" required>
+                                        </fieldset>
+                                    </div>
+
+
+                                    <!-- input Passport Requirement Details -->
+                                    <div class="row p-3">
+                                        <label>Passport Requirement Details</label>
+                                        <textarea rows="5" name="passportRequirementDetails" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- National ID card section -->
+                                <div class="my-5">
+                                    <h1 class="fs-5 ffl-text-color"><u>National ID Card</u></h1>
+                                    <div>
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="nationalIDCard" class="border-0 w-100 form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Photo Requirement Section -->
+                                <div class="my-5">
+                                    <h1 class="fs-5 ffl-text-color"><u>Photo Requirement</u></h1>
+
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <select name="photoUnit" class="w-75 mt-3 h-75 ffl-border text-center form-select" required>
+                                                <option>Unit</option>
+                                                <option value="mm">mm</option>
+                                                <option value="cm">cm</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="col">
+                                            <fieldset class="reset ffl-border w-75 mx-auto">
+                                                <legend class="reset">Width</legend>
+                                                <input name="photoWidth" class="border-0 w-100" type="number" required>
+                                            </fieldset>
+                                        </div>
+
+                                        <div class="col">
+                                            <fieldset class="reset ffl-border w-75 mx-auto">
+                                                <legend class="reset">Height</legend>
+                                                <input name="photoHeight" class="border-0 w-100" type="number" required>
+                                            </fieldset>
+                                        </div>
+
+
+                                        <div class="py-5">
+                                            <label>Photo Requirement Details</label>
+                                            <textarea name="photoRequirementDetails" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <!-- Utility Bill Section -->
+                                <div class="my-5">
+                                    <h1 class="fs-5 ffl-text-color"><u>Utility Bill</u></h1>
+                                    <div>
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="utilityBill" class="border-0 w-100 form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Asset Valuation -->
+                                <div class="row p-3">
+                                    <label class="col">Asset Valuation</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="assetValuation" class="border-0 w-100 form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Visa Application Submission Center -->
+                                <div class="row p-3">
+                                    <label class="col">Visa Application Submission Center</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="visaApplicationSubmissionCenter" class="border-0 w-100 form-select">
+                                                <option value="Visa Center">Visa Center</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Google Map Link -->
+                                <div class="row p-3">
+                                    <label class="col">Google Map Link</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border mx-auto">
+                                            <legend class="reset">Link</legend>
+                                            <input name="googleMapLink" class="border-0 w-100" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="py-3">
+                                    <label>Address</label>
+                                    <textarea name="address" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+                                </div>
+
+                                <!-- Appointment Required -->
+                                <div class="row p-3">
+                                    <label class="col">Appointment Required</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset">Select</legend>
+                                            <select name="appointmentRequired" class="border-0 w-100 form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Visa Information Source Link 1 -->
+                                <div class="row p-3">
+                                    <label class="col">Visa Information Source Link 1</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border mx-auto">
+                                            <legend class="reset">Source Link</legend>
+                                            <input class="border-0 w-100" type="url" name="visaInformationSourceLink1" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <!-- Visa Information Source Link 2-->
+                                <div class="row p-3">
+                                    <label class="col">Visa Information Source Link 2</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border mx-auto">
+                                            <legend class="reset">Source Link</legend>
+                                            <input class="border-0 w-100" type="url" name="visaInformationSourceLink2" required>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
 
-                        <h1 class="fs-5 ff-text-color"><u>Financial Document</u></h1>
+                        <!-- right column -->
+                        <div class="container w-50 col">
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Cost Details</u></h1>
 
-                        <!-- input Embassy Fee Fee  -->
-                        <div class="row p-3">
-                            <label class="col">Bank Statement</label>
+                                <!-- input Embassy Fee Fee  -->
+                                <div class="row p-3">
+                                    <label class="col">Embassy Fee</label>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">Month</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">BDT</legend>
+                                            <input type="number" id="embassy-fee" value="10000" name="embassyFee" class="border-0 w-100" onChange="totalCost()" required>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+
+                                <!-- input Embassy Agent Fee  -->
+                                <div class="row p-3">
+                                    <label class="col">Embassy Agent Fee</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">BDT</legend>
+                                            <input type="number" value="5000" id="embassy-agent-fee" name="embassyAgentFee" class="border-0 w-100" onChange="totalCost()" required>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+
+                                <!-- input Others Cost -->
+                                <div class="row p-3">
+                                    <label class="col">Others Cost</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">BDT</legend>
+                                            <input name="othersCost" value="500" id="others-cost" class="border-0 w-100" type="number" onChange="totalCost()" required>
+                                        </fieldset>
+                                    </div>
+
+                                    <label>Others Cost Details</label>
+                                    <textarea name="othersCostDetails" rows="5" class="ffl-border p-1 mx-auto my-1 w-75"></textarea>
+
+                                </div>
+
+                                <!-- input Others Cost -->
+                                <div class="row p-3">
+                                    <label class="col">Our Service Charge</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">BDT</legend>
+                                            <input name="serviceCharge" id="service-charge" type="number" class="border-0 w-100 " value="500" onChange="totalCost()" required>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+
+                                <hr>
+
+                                <div class="row p-3">
+                                    <label class="col">Total Cost</label>
+                                    <div class="col">
+                                        <div class="reset ffl-border w-75 mx-auto row p-2">
+                                            <text class="reset f-6 col">BDT</text>
+                                            <text id="total-cost" class="border-0 w-75 col " required>16000</text>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-                        </div>
 
-                        <!-- input Embassy Fee Fee  -->
-                        <div class="row p-3">
-                            <label class="col">Period</label>
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Professional Document</u></h1>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
+                                <label>Professional Document Details</label>
+                                <textarea name="professionalDocumentDetails" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
                             </div>
 
-                        </div>
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Other Documents</u></h1>
 
-                        <!-- input Embassy Agent Fee -->
-                        <div class="row p-3">
-                            <label class="col">Minimum Balance</label>
+                                <label>Other Document Details</label>
+                                <textarea name="otherDocumentDetails" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset f-6">BDT</legend>
-                                    <input name="country" class="border-0 w-100">
-                                </fieldset>
                             </div>
 
-                        </div>
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Other Information</u></h1>
+
+                                <label>General Information</label>
+                                <textarea name="generalInformation" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+
+                            </div>
+
+                            <div class="my-5">
+                                <h1 class="fs-5 ffl-text-color"><u>Financial Document</u></h1>
+
+                                <!-- input Embassy Fee Fee  -->
+                                <div class="row p-3">
+                                    <label class="col">Bank Statement</label>
 
 
-                        <!-- input visa duration type -->
-                        <div class="row p-3">
-                            <label class="col">Bank Solvency</label></label>
 
-                            <div class="col">
-                                <fieldset class="reset ff-border w-50 mx-auto">
-                                    <legend class="reset">Select</legend>
-                                    <select name="country" class="border-0 w-100">
-                                        <option value="Tourist Visa">Yes</option>
-                                    </select>
-                                </fieldset>
+                                </div>
+
+                                <!-- input Embassy Fee Fee  -->
+                                <div class="row p-3">
+                                    <label class="col">Period</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">Month</legend>
+                                            <input name="period" class="border-0 w-100" type="number" required>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+
+                                <!-- input Minimum Balance -->
+                                <div class="row p-3">
+                                    <label class="col">Minimum Balance</label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto">
+                                            <legend class="reset f-6">BDT</legend>
+                                            <input name="minimum_balance" type="number" class="border-0 w-100" required>
+                                        </fieldset>
+                                    </div>
+
+                                </div>
+
+                                <!-- input Bank Solvency-->
+                                <div class="row p-3">
+                                    <label class="col">Bank Solvency</label></label>
+
+                                    <div class="col">
+                                        <fieldset class="reset ffl-border w-50 mx-auto ">
+                                            <legend class="reset">Select</legend>
+                                            <select name="bankSolvency" class="border-0 w-100 form-select">
+                                                <option value="yes">Yes</option>
+                                                <option value="no">No</option>
+                                            </select>
+                                        </fieldset>
+                                    </div>
+                                </div>
+
+                                <div class="my-5">
+
+
+                                    <label>Bank Statement Details</label>
+                                    <textarea name="bankStatementDetails" rows="5" class="ffl-border p-1 mx-auto my-1 w-100"></textarea>
+
+                                </div>
+
                             </div>
                         </div>
+
+
+
                     </div>
-
-                </div>
+                    <button type="submit" class="btn btn-primary w-25">Submit</button>
+                </form>
 
             </div>
         </main>
     </div>
 
 
+    <script>
+        var url = './../json/countries.json';
+
+        let countrySelect = document.getElementById('countries');
+
+        function createOptions(data) {
+
+            for (let i = 0; i < data.length; i++) {
+                const option = document.createElement("option");
+                option.text = data[i].name;
+                countrySelect.add(option);
+            }
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => createOptions(data));
+    </script>
 
     <?php include './../external-scripts.php' ?>
 </body>
